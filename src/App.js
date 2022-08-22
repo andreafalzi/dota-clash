@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import dataHeroes from './heroes.json';
 import abilitiesHeroes from './abilities.json';
+import { Card } from './component/card/card.component';
 
 function App() {
   const [heroes, setHeroes] = useState([]);
@@ -16,17 +17,10 @@ function App() {
   return (
     <div className='App'>
       <h1>Heroes</h1>
+      {/* <Card heroes={heroes[1]} imgUrl={url} /> */}
       <div className='grid'>
-        {heroes.map(({ localized_name, name, img, id, icon }) => {
-          return (
-            <div key={id}>
-              <h2>
-                <img src={`${url}${icon}`} alt={name} />
-                {localized_name}
-              </h2>
-              <img src={`${url}${img}`} alt={name} />
-            </div>
-          );
+        {heroes.map((hero) => {
+          return <Card key={hero.id} heroes={hero} imgUrl={url} />;
         })}
       </div>
       <h1>Abilities</h1>
