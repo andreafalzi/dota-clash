@@ -7,7 +7,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Escape", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/antimage.png?",
-    "imgHD": "https://i.imgur.com/6TP0dqs.jpg",
+    "imgHD": "https://i.imgur.com/ObFiSkP.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/antimage.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -116,7 +116,7 @@
     "attack_type": "Melee",
     "roles": ["Initiator", "Durable", "Disabler", "Jungler", "Carry"],
     "img": "/apps/dota2/images/dota_react/heroes/axe.png?",
-    "imgHD": "https://i.imgur.com/TN5fJu8.jpg",
+    "imgHD": "https://i.imgur.com/PxblWVf.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/axe.png?",
     "base_health": 200,
     "base_health_regen": 2.5,
@@ -204,7 +204,7 @@
     "attack_type": "Ranged",
     "roles": ["Support", "Disabler", "Nuker", "Durable"],
     "img": "/apps/dota2/images/dota_react/heroes/bane.png?",
-    "imgHD": "https://i.imgur.com/paYrq9p.jpg",
+    "imgHD": "https://i.imgur.com/pnl2WIf.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/bane.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -300,7 +300,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Disabler", "Jungler", "Nuker", "Initiator"],
     "img": "/apps/dota2/images/dota_react/heroes/bloodseeker.png?",
-    "imgHD": "https://i.imgur.com/ZUYA1Cv.jpg",
+    "imgHD": "https://i.imgur.com/rABfcwG.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/bloodseeker.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -1418,7 +1418,7 @@
     "attack_type": "Ranged",
     "roles": ["Carry", "Support", "Escape", "Nuker", "Disabler"],
     "img": "/apps/dota2/images/dota_react/heroes/mirana.png?",
-    "imgHD": "https://i.imgur.com/bkEQozL.jpg",
+    "imgHD": "https://i.imgur.com/DBrRiOS.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/mirana.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -2226,24 +2226,289 @@
     "legs": 2,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Spirit Lance",
+        "behavior": "Unit Target",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": "Yes",
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Sends a magical spirit lance to a target enemy unit that damages and slows, while summoning an illusory phantom to attack the unit.",
+        "attrib": [
+          {
+            "key": "lance_damage",
+            "header": "LANCE DAMAGE:",
+            "value": ["100", "160", "220", "280"]
+          },
+          {
+            "key": "lance_speed",
+            "header": "LANCE SPEED:",
+            "value": "1000",
+            "generated": true
+          },
+          {
+            "key": "duration",
+            "header": "SLOW DURATION:",
+            "value": "3.25"
+          },
+          {
+            "key": "movement_speed_pct",
+            "header": "MOVEMENT SLOW:",
+            "value": ["-10%", "-18%", "-26%", "-34%"]
+          },
+          {
+            "key": "illusion_duration",
+            "header": "ILLUSION DURATION:",
+            "value": ["2", "4", "6", "8"]
+          },
+          {
+            "key": "illusion_damage_out_pct",
+            "header": "ILLUSION DAMAGE OUT PCT:",
+            "value": "-80",
+            "generated": true
+          },
+          {
+            "key": "tooltip_illusion_damage",
+            "header": "ILLUSION DAMAGE:",
+            "value": "20%"
+          },
+          {
+            "key": "illusion_damage_in_pct",
+            "header": "ILLUSION DAMAGE IN PCT:",
+            "value": "300",
+            "generated": true
+          },
+          {
+            "key": "tooltip_illusion_total_damage_in_pct",
+            "header": "ILLUSION DAMAGE TAKEN:",
+            "value": "400%"
+          },
+          {
+            "key": "fake_lance_distance",
+            "header": "FAKE LANCE DISTANCE:",
+            "value": "675",
+            "generated": true
+          },
+          {
+            "key": "shard_bounce_radius",
+            "header": "BOUNCE RADIUS:",
+            "value": "750"
+          },
+          {
+            "key": "shard_bonus_illusion_damage",
+            "header": "BONUS ILLUSION DAMAGE:",
+            "value": "40%"
+          },
+          {
+            "key": "shard_total_hits",
+            "header": "SHARD TOTAL HITS:",
+            "value": "2",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "CAST RANGE:",
+            "value": ["525", "600", "675", "750"]
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.3",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "120",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": "7",
+            "generated": true
+          }
+        ],
+        "lore": "Azwraith's proficiency at spearing his family's meal of fish is proving quite useful in the battlefield.",
+        "mc": "120",
+        "cd": "7",
+        "img": "/apps/dota2/images/dota_react/abilities/phantom_lancer_spirit_lance.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Doppelganger",
+        "behavior": ["Point Target", "AOE"],
+        "desc": "Phantom Lancer briefly vanishes from the battlefield. After 1 second, Phantom Lancer and any of his nearby illusions reappear at a random position within the targeted location, along with two additional doppelgangers. Extends duration of all illusions. The two added doppelgangers have different properties: one takes normal damage and deals none, while the other takes 500% bonus damage and deals -80% less damage.\n\nDISPEL TYPE: Basic Dispel",
+        "attrib": [
+          {
+            "key": "illusion_1_damage_out_pct",
+            "header": "ILLUSION 1 DAMAGE OUT PCT:",
+            "value": "-100",
+            "generated": true
+          },
+          {
+            "key": "illusion_1_damage_in_pct",
+            "header": "ILLUSION 1 DAMAGE IN PCT:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "illusion_2_damage_out_pct",
+            "header": "ILLUSION 2 DAMAGE OUT PCT:",
+            "value": "-80",
+            "generated": true
+          },
+          {
+            "key": "illusion_2_damage_in_pct",
+            "header": "ILLUSION 2 DAMAGE IN PCT:",
+            "value": "500",
+            "generated": true
+          },
+          {
+            "key": "target_aoe",
+            "header": "TARGET AREA SIZE:",
+            "value": "325"
+          },
+          {
+            "key": "search_radius",
+            "header": "ILLUSION GATHER RANGE:",
+            "value": "900"
+          },
+          {
+            "key": "delay",
+            "header": "REAPPEAR DELAY:",
+            "value": "1"
+          },
+          {
+            "key": "illusion_duration",
+            "header": "DOPPELGANGER DURATION:",
+            "value": "8"
+          },
+          {
+            "key": "illusion_extended_duration",
+            "header": "ILLUSION DURATION EXTENSION:",
+            "value": "2"
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "575",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.1",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "50",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["19", "16", "13", "10"],
+            "generated": true
+          }
+        ],
+        "lore": "Dread Magus Vorn's death imbued the Phantom Lancer with the ability to bend and fracture all spectrums of light.",
+        "mc": "50",
+        "cd": ["19", "16", "13", "10"],
+        "img": "/apps/dota2/images/dota_react/abilities/phantom_lancer_doppelwalk.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Juxtapose",
+        "behavior": "Passive",
+        "desc": "Phantom Lancer has a chance to fracture his presence on an attack, creating an illusion of himself. Illusions also have a chance to fracture further. Illusions created from Phantom Lancer last for 8 seconds, while illusions created from other illusions last 4 seconds.",
+        "attrib": [
+          {
+            "key": "max_illusions",
+            "header": "MAX ILLUSIONS:",
+            "value": ["6", "8", "10"]
+          },
+          {
+            "key": "proc_chance_pct",
+            "header": "HERO TRIGGER CHANCE:",
+            "value": ["40%", "45%", "50%"]
+          },
+          {
+            "key": "illusion_proc_chance_pct",
+            "header": "ILLUSION TRIGGER CHANCE:",
+            "value": "8%"
+          },
+          {
+            "key": "illusion_duration",
+            "header": "ILLUSION DURATION:",
+            "value": "8",
+            "generated": true
+          },
+          {
+            "key": "illusion_damage_out_pct",
+            "header": "ILLUSION DAMAGE OUT PCT:",
+            "value": "-78",
+            "generated": true
+          },
+          {
+            "key": "tooltip_illusion_damage",
+            "header": "ILLUSION DAMAGE:",
+            "value": "22%"
+          },
+          {
+            "key": "illusion_damage_in_pct",
+            "header": "ILLUSION DAMAGE IN PCT:",
+            "value": "550",
+            "generated": true
+          },
+          {
+            "key": "tooltip_total_illusion_damage_in_pct",
+            "header": "ILLUSION DAMAGE TAKEN:",
+            "value": "650%"
+          },
+          {
+            "key": "illusion_from_illusion_duration",
+            "header": "ILLUSION FROM ILLUSION DURATION:",
+            "value": "4",
+            "generated": true
+          },
+          {
+            "key": "scepter_bonus_duration",
+            "header": "BONUS DURATION:",
+            "value": "10"
+          },
+          {
+            "key": "scepter_bonus_illusions",
+            "header": "BONUS ILLUSIONS:",
+            "value": "2"
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "75",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": "40",
+            "generated": true
+          }
+        ],
+        "lore": "Each of Azwraith's lance attacks feels like two from a normal warrior; or three; or four...",
+        "mc": "75",
+        "cd": "40",
+        "img": "/apps/dota2/images/dota_react/abilities/phantom_lancer_juxtapose.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "Phantom Rush",
+        "behavior": ["Instant Cast", "No Target"],
+        "dispellable": "Yes",
+        "desc": "When targetting an enemy for an attack, Phantom Lancer quickly charges into range, gaining a temporary agility boost. Phantom Lancer's illusions also have this ability.",
+        "attrib": [],
+        "lore": "Azwraith knows that on the field of battle, speed can mean everything.",
+        "cd": ["13", "10", "7", "4"],
+        "img": "/apps/dota2/images/dota_react/abilities/phantom_lancer_phantom_edge.png"
       }
     ]
   },
@@ -2255,7 +2520,7 @@
     "attack_type": "Ranged",
     "roles": ["Initiator", "Disabler", "Escape", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/puck.png?",
-    "imgHD": "https://i.imgur.com/4NNyAIk.jpg",
+    "imgHD": "https://i.imgur.com/vFexCnq.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/puck.png?",
     "base_health": 200,
     "base_health_regen": 0.5,
@@ -2280,24 +2545,61 @@
     "legs": 2,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Illusory Orb",
+        "behavior": "Point Target",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "desc": "Puck launches a magic orb that floats in a straight path, damaging enemy units along the way. At any point, Puck may teleport to the orb's location using Ethereal Jaunt.",
+        "dmg": ["75", "150", "225", "300"],
+        "attrib": [],
+        "lore": "The playful Faerie Dragon delights in confusing others, vanishing and reappearing where unexpected.",
+        "mc": ["80", "100", "120", "140"],
+        "cd": ["12", "11", "10", "9"],
+        "img": "/apps/dota2/images/dota_react/abilities/puck_illusory_orb.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Ethereal Jaunt",
+        "behavior": "No Target",
+        "desc": "Teleports Puck to a flying Illusory Orb.",
+        "attrib": [],
+        "img": "/apps/dota2/images/dota_react/abilities/puck_ethereal_jaunt.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Waning Rift",
+        "behavior": ["Point Target", "AOE"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": "Yes",
+        "desc": "Puck teleports to the target location and releases a burst of faerie dust that deals damage and silences enemy units nearby.",
+        "attrib": [],
+        "lore": "With a mischievous grin, Puck spreads its enchanted powder which disrupts magical flow.",
+        "mc": ["100", "110", "120", "130"],
+        "cd": ["16", "15", "14", "13"],
+        "img": "/apps/dota2/images/dota_react/abilities/puck_waning_rift.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "Phase Shift",
+        "behavior": ["No Target", "Channeled"],
+        "desc": "CHANNELED - Puck briefly shifts into another dimension where it is immune from harm.",
+        "attrib": [],
+        "lore": "With a quip and flash, Puck returns to the alien dimension from whence it came.",
+        "mc": "0",
+        "cd": ["8", "7.5", "7", "6.5"],
+        "img": "/apps/dota2/images/dota_react/abilities/puck_phase_shift.png"
+      },
+      {
+        "dname": "Dream Coil",
+        "behavior": ["AOE", "Point Target"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": "No",
+        "target_type": "Hero",
+        "desc": "Creates a coil of volatile magic that latches onto enemy Heroes, damaging and leashing them.  If the enemy hero stretches the coil by moving too far away, it snaps, stunning and dealing additional damage.",
+        "attrib": [],
+        "lore": "The Faerie Dragon sows confusion by forcing its enemies to vividly dream about their own mortality.",
+        "mc": ["100", "150", "200"],
+        "cd": "75",
+        "img": "/apps/dota2/images/dota_react/abilities/puck_dream_coil.png"
       }
     ]
   },
@@ -2309,7 +2611,7 @@
     "attack_type": "Melee",
     "roles": ["Disabler", "Initiator", "Durable", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/pudge.png?",
-    "imgHD": "https://i.imgur.com/GKfo0jx.jpg",
+    "imgHD": "https://i.imgur.com/JXUuk3V.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/pudge.png?",
     "base_health": 200,
     "base_health_regen": 2,
@@ -2334,24 +2636,163 @@
     "legs": 2,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Flesh Heap",
+        "behavior": ["No Target", "Instant Cast"],
+        "dispellable": "No",
+        "desc": "Gives Pudge a guaranteed damage block against all types of attack. Passively grants bonus strength that increases each time Pudge kills an enemy Hero or it dies in his vicinity.  Flesh Heap is retroactive, meaning it can gain charges before it is skilled, which then become active.",
+        "attrib": [],
+        "lore": "The Butcher gives new meaning to the words 'meat shield.'",
+        "mc": ["35", "40", "45", "50"],
+        "cd": ["20", "18", "16", "14"],
+        "img": "/apps/dota2/images/dota_react/abilities/pudge_flesh_heap.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Meat Hook",
+        "behavior": "Point Target",
+        "dmg_type": "Pure",
+        "bkbpierce": "Yes",
+        "desc": "Launches a bloody hook toward a unit or location. The hook will snag the first unit it encounters, dragging the unit back to Pudge, killing it if it's a non-ancient creep and dealing damage if it is an enemy otherwise.",
+        "attrib": [
+          {
+            "key": "damage",
+            "header": "DAMAGE:",
+            "value": ["150", "220", "290", "360"]
+          },
+          {
+            "key": "hook_speed",
+            "header": "HOOK SPEED:",
+            "value": "1450",
+            "generated": true
+          },
+          {
+            "key": "hook_width",
+            "header": "HOOK WIDTH:",
+            "value": "100",
+            "generated": true
+          },
+          {
+            "key": "hook_distance",
+            "header": "CAST RANGE:",
+            "value": "1300"
+          },
+          {
+            "key": "vision_radius",
+            "header": "VISION RADIUS:",
+            "value": "500",
+            "generated": true
+          },
+          {
+            "key": "vision_duration",
+            "header": "VISION DURATION:",
+            "value": "4",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "1300",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.3",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "110",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["18", "16", "14", "12"],
+            "generated": true
+          }
+        ],
+        "lore": "The Butcher's hook is a symbolic nightmare, its curved blade a frightening reminder of his slaughterous intent.",
+        "mc": "110",
+        "cd": ["18", "16", "14", "12"],
+        "img": "/apps/dota2/images/dota_react/abilities/pudge_meat_hook.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Rot",
+        "behavior": "No Target",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "desc": "A toxic cloud that deals intense damage and slows movement--harming not only enemy units but Pudge himself.",
+        "attrib": [
+          {
+            "key": "rot_radius",
+            "header": "RADIUS:",
+            "value": "250"
+          },
+          {
+            "key": "rot_tick",
+            "header": "ROT TICK:",
+            "value": "0.2",
+            "generated": true
+          },
+          {
+            "key": "rot_slow",
+            "header": "MOVE SLOW:",
+            "value": ["-14%", "-20%", "-26%", "-32%"]
+          },
+          {
+            "key": "rot_damage",
+            "header": "DAMAGE:",
+            "value": ["30", "60", "90", "120"]
+          },
+          {
+            "key": "scepter_rot_damage_bonus",
+            "header": "BONUS DAMAGE:",
+            "value": "100"
+          },
+          {
+            "key": "scepter_rot_radius_bonus",
+            "header": "BONUS RADIUS:",
+            "value": "225"
+          },
+          {
+            "key": "scepter_rot_regen_reduction_pct",
+            "header": "REGEN REDUCTION:",
+            "value": "25%"
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0",
+            "generated": true
+          }
+        ],
+        "lore": "A foul odor precedes a toxic, choking gas, emanating from the Butcher's putrid, ever-swelling mass.",
+        "img": "/apps/dota2/images/dota_react/abilities/pudge_rot.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "Eject",
+        "behavior": ["No Target", "Instant Cast", "Hidden"],
+        "bkbpierce": "No",
+        "desc": "Ejects the swallowed allied hero inside of you.",
+        "attrib": [],
+        "lore": "Allies emerge forever changed.",
+        "img": "/apps/dota2/images/dota_react/abilities/pudge_eject.png"
+      },
+      {
+        "dname": "Dismember",
+        "behavior": ["Unit Target", "Channeled"],
+        "dmg_type": "Magical",
+        "bkbpierce": "Yes",
+        "dispellable": [],
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "CHANNELED - Pudge chows down on an enemy unit, disabling it and dealing damage over time. Pudge gets healed for the same amount he damages. Lasts longer on creeps.",
+        "attrib": [],
+        "lore": "'When I'm through with these vermin, they'll be fit for a pie!'",
+        "mc": ["100", "130", "170"],
+        "cd": ["30", "25", "20"],
+        "img": "/apps/dota2/images/dota_react/abilities/pudge_dismember.png"
       }
     ]
   },
@@ -2388,24 +2829,263 @@
     "legs": 0,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Plasma Field",
+        "behavior": ["No Target", "Instant Cast"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": "Yes",
+        "desc": "Releases a wave of energetic plasma that grows in power as it expands, but also zaps on contraction, slowing and dealing damage to enemy units caught in its path. Damage and slow increases with distance from Razor. The Plasma Field hits each unit twice, once each direction.",
+        "attrib": [
+          {
+            "key": "damage_min",
+            "header": "DAMAGE MIN:",
+            "value": ["35", "40", "45", "50"]
+          },
+          {
+            "key": "damage_max",
+            "header": "DAMAGE MAX:",
+            "value": ["80", "115", "150", "185"]
+          },
+          {
+            "key": "radius",
+            "header": "RADIUS:",
+            "value": "700"
+          },
+          {
+            "key": "speed",
+            "header": "SPEED:",
+            "value": "636",
+            "generated": true
+          },
+          {
+            "key": "slow_min",
+            "header": "SLOW MIN:",
+            "value": "5%"
+          },
+          {
+            "key": "slow_max",
+            "header": "SLOW MAX:",
+            "value": ["25%", "30%", "35%", "40%"]
+          },
+          {
+            "key": "slow_duration",
+            "header": "SLOW DURATION:",
+            "value": "1.5"
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "125",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["13", "12", "11", "10"],
+            "generated": true
+          }
+        ],
+        "lore": "The Lightning Revenant rules the Underscape with plasmatic power.",
+        "mc": "125",
+        "cd": ["13", "12", "11", "10"],
+        "img": "/apps/dota2/images/dota_react/abilities/razor_plasma_field.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Static Link",
+        "behavior": "Unit Target",
+        "bkbpierce": "Yes",
+        "dispellable": "No",
+        "target_team": "Enemy",
+        "target_type": "Hero",
+        "desc": "Creates a charged link between Razor and an enemy Hero, stealing damage from the target and giving it to Razor. Allows Razor to attack while moving with the link active.",
+        "attrib": [
+          {
+            "key": "drain_length",
+            "header": "LINK DURATION:",
+            "value": ["5", "6", "7", "8"]
+          },
+          {
+            "key": "drain_duration",
+            "header": "BUFF DURATION:",
+            "value": ["15", "16", "17", "18"]
+          },
+          {
+            "key": "drain_rate",
+            "header": "DAMAGE DRAIN RATE:",
+            "value": ["7", "12", "17", "22"]
+          },
+          {
+            "key": "drain_range_buffer",
+            "header": "DRAIN RANGE BUFFER:",
+            "value": "250",
+            "generated": true
+          },
+          {
+            "key": "radius",
+            "header": "RADIUS:",
+            "value": "200",
+            "generated": true
+          },
+          {
+            "key": "speed",
+            "header": "SPEED:",
+            "value": "900",
+            "generated": true
+          },
+          {
+            "key": "vision_radius",
+            "header": "VISION RADIUS:",
+            "value": "800",
+            "generated": true
+          },
+          {
+            "key": "vision_duration",
+            "header": "VISION DURATION:",
+            "value": "3.34",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "550",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.3",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "65",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["40", "35", "30", "25"],
+            "generated": true
+          }
+        ],
+        "lore": "Razor's polarity channels electricity into his being, draining the power of his opposition.",
+        "mc": "65",
+        "cd": ["40", "35", "30", "25"],
+        "img": "/apps/dota2/images/dota_react/abilities/razor_static_link.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Storm Surge",
+        "behavior": "Passive",
+        "desc": "Passively increases Razor's movement speed.",
+        "attrib": [
+          {
+            "key": "self_movement_speed_pct",
+            "header": "BONUS SPEED:",
+            "value": ["12%", "16%", "20%", "24%"]
+          },
+          {
+            "key": "shard_pct_chance",
+            "header": "ON ATTACKED CHANCE:",
+            "value": "18%"
+          },
+          {
+            "key": "shard_target_count",
+            "header": "TARGETS HIT:",
+            "value": "3"
+          },
+          {
+            "key": "shard_damage",
+            "header": "DAMAGE:",
+            "value": "150"
+          },
+          {
+            "key": "shard_move_slow_pct",
+            "header": "MOVEMENT SLOW:",
+            "value": "50%"
+          },
+          {
+            "key": "shard_slow_duration",
+            "header": "SLOW DURATION:",
+            "value": "1.5"
+          },
+          {
+            "key": "shard_search_radius",
+            "header": "STRIKE SEARCH AREA:",
+            "value": "900"
+          }
+        ],
+        "lore": "Merely approaching the Lightning Revenant is rewarded with shock therapy.",
+        "img": "/apps/dota2/images/dota_react/abilities/razor_unstable_current.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "Eye of the Storm",
+        "behavior": ["No Target", "Instant Cast"],
+        "dmg_type": "Physical",
+        "bkbpierce": "Yes",
+        "dispellable": "No",
+        "desc": "A powerful lightning storm strikes out at enemy units with the lowest health, dealing damage and reducing their armor.",
+        "attrib": [
+          {
+            "key": "radius",
+            "header": "RADIUS:",
+            "value": "500"
+          },
+          {
+            "key": "duration",
+            "header": "DURATION:",
+            "value": "30"
+          },
+          {
+            "key": "strike_interval",
+            "header": "STRIKE INTERVAL:",
+            "value": ["0.7", "0.6", "0.5"]
+          },
+          {
+            "key": "armor_reduction",
+            "header": "ARMOR REDUCTION:",
+            "value": "1"
+          },
+          {
+            "key": "damage",
+            "header": "DAMAGE:",
+            "value": ["60", "75", "90"]
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["100", "150", "200"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["80", "70", "60"],
+            "generated": true
+          }
+        ],
+        "lore": "Ride the lightning.",
+        "mc": ["100", "150", "200"],
+        "cd": ["80", "70", "60"],
+        "img": "/apps/dota2/images/dota_react/abilities/razor_eye_of_the_storm.png"
       }
     ]
   },
@@ -2442,24 +3122,195 @@
     "legs": 6,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Burrowstrike",
+        "behavior": ["Point Target", "Unit Target"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": [],
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Sand King burrows into the ground and tunnels forward, damaging and stunning enemy units above him as he resurfaces.",
+        "dmg": ["100", "160", "220", "280"],
+        "attrib": [
+          {
+            "key": "burrow_width",
+            "header": "BURROW WIDTH:",
+            "value": "150",
+            "generated": true
+          },
+          {
+            "key": "burrow_duration",
+            "header": "STUN DURATION:",
+            "value": ["1.6", "1.8", "2", "2.2"]
+          },
+          {
+            "key": "burrow_speed",
+            "header": "BURROW SPEED:",
+            "value": "2000",
+            "generated": true
+          },
+          {
+            "key": "burrow_anim_time",
+            "header": "BURROW ANIM TIME:",
+            "value": "0.52",
+            "generated": true
+          },
+          {
+            "key": "cast_range_scepter",
+            "header": "SCEPTER RANGE:",
+            "value": "1300"
+          },
+          {
+            "key": "burrow_speed_scepter",
+            "header": "BURROW SPEED SCEPTER:",
+            "value": "3000",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "CAST RANGE:",
+            "value": ["425", "500", "575", "650"]
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["110", "120", "130", "140"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["15", "14", "13", "12"],
+            "generated": true
+          }
+        ],
+        "lore": "Crixalis often lies in wait, burrowing under the surface to ambush his adversaries.",
+        "mc": ["110", "120", "130", "140"],
+        "cd": ["15", "14", "13", "12"],
+        "img": "/apps/dota2/images/dota_react/abilities/sandking_burrowstrike.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Sand Storm",
+        "behavior": "No Target",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": "No",
+        "desc": "Sand King creates a fearsome sandstorm that damages enemy units while hiding him from vision.  The effect ends when Sand King leaves the area.",
+        "attrib": [
+          {
+            "key": "damage_tick_rate",
+            "header": "DAMAGE TICK RATE:",
+            "value": "0.2",
+            "generated": true
+          },
+          {
+            "key": "sand_storm_radius",
+            "header": "RADIUS:",
+            "value": ["425", "500", "575", "650"]
+          },
+          {
+            "key": "sand_storm_damage",
+            "header": "SAND STORM DAMAGE:",
+            "value": ["25", "45", "65", "85"]
+          },
+          {
+            "key": "fade_delay",
+            "header": "FADE DELAY:",
+            "value": "0.7",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilityduration",
+            "header": "ABILITYDURATION:",
+            "value": ["20", "25", "30", "35"],
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "85",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["40", "34", "28", "22"],
+            "generated": true
+          }
+        ],
+        "lore": "Some say Crixalis is a mirage; his carapace appearing then vanishing between the whirling sands of the Scintillant Waste.",
+        "mc": "85",
+        "cd": ["40", "34", "28", "22"],
+        "img": "/apps/dota2/images/dota_react/abilities/sandking_sand_storm.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Caustic Finale",
+        "behavior": "Passive",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": "Yes",
+        "desc": "Sand King's attacks inject a venom that causes enemy units to move more slowly and to violently explode when it dies.",
+        "attrib": [
+          {
+            "key": "caustic_finale_radius",
+            "header": "EXPLODE RADIUS:",
+            "value": "500"
+          },
+          {
+            "key": "caustic_finale_damage_base",
+            "header": "BASE DAMAGE:",
+            "value": ["70", "90", "110", "130"]
+          },
+          {
+            "key": "caustic_finale_damage_pct",
+            "header": "MAX HEALTH DAMAGE:",
+            "value": ["10%", "14%", "18%", "22%"]
+          },
+          {
+            "key": "caustic_finale_duration",
+            "header": "CAUSTIC FINALE DURATION:",
+            "value": "5",
+            "generated": true
+          },
+          {
+            "key": "caustic_finale_slow",
+            "header": "MOVE SLOW:",
+            "value": ["-10%", "-15%", "-20%", "-25%"]
+          }
+        ],
+        "lore": "An injection from Crixalis makes one brittle and as dry as the arid wastes, subject to implosive demise.",
+        "img": "/apps/dota2/images/dota_react/abilities/sandking_caustic_finale.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "Epicenter",
+        "behavior": "No Target",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": "No",
+        "desc": "After a cast point of 2 seconds, Sand King sends a disturbance into the earth, causing it to shudder violently. All enemies caught within range will take damage and become slowed. Each subsequent pulse increases the radius of damage dealt.",
+        "attrib": [],
+        "lore": "Many an explorer was lost to the quicksands of the Scintillant Waste.",
+        "mc": ["150", "225", "300"],
+        "cd": ["120", "110", "100"],
+        "img": "/apps/dota2/images/dota_react/abilities/sandking_epicenter.png"
       }
     ]
   },
@@ -2496,24 +3347,270 @@
     "legs": 2,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Electric Rave",
+        "behavior": ["No Target", "Hidden"],
+        "bkbpierce": "No",
+        "dispellable": "No",
+        "desc": "Grants Storm Spirit and allied heroes within 750 AoE of him 3 Overload charges. Provides 40 Attack Speed. Lasts up to 12 seconds or until the charges are depleted.",
+        "attrib": [
+          {
+            "key": "radius",
+            "header": "RADIUS:",
+            "value": "750",
+            "generated": true
+          },
+          {
+            "key": "charges",
+            "header": "CHARGES:",
+            "value": "3",
+            "generated": true
+          },
+          {
+            "key": "duration",
+            "header": "DURATION:",
+            "value": "12",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "150",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": "30",
+            "generated": true
+          }
+        ],
+        "mc": "150",
+        "cd": "30",
+        "img": "/apps/dota2/images/dota_react/abilities/storm_spirit_electric_rave.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Static Remnant",
+        "behavior": "No Target",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "desc": "Creates an explosively charged image of Storm Spirit that lasts 12 seconds and will detonate and deal damage if an enemy unit comes near it.",
+        "attrib": [
+          {
+            "key": "static_remnant_radius",
+            "header": "STATIC REMNANT RADIUS:",
+            "value": "235",
+            "generated": true
+          },
+          {
+            "key": "static_remnant_damage_radius",
+            "header": "RADIUS:",
+            "value": "260"
+          },
+          {
+            "key": "static_remnant_delay",
+            "header": "STATIC REMNANT DELAY:",
+            "value": "1",
+            "generated": true
+          },
+          {
+            "key": "static_remnant_damage",
+            "header": "DAMAGE:",
+            "value": ["120", "180", "240", "300"]
+          },
+          {
+            "key": "abilityduration",
+            "header": "ABILITYDURATION:",
+            "value": "12",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["70", "80", "90", "100"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": "3.5",
+            "generated": true
+          }
+        ],
+        "lore": "Raijin Thunderkeg's duality allows him to admire himself in shocking fashion.",
+        "mc": ["70", "80", "90", "100"],
+        "cd": "3.5",
+        "img": "/apps/dota2/images/dota_react/abilities/storm_spirit_static_remnant.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Electric Vortex",
+        "behavior": "Unit Target",
+        "bkbpierce": "No",
+        "dispellable": [],
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "A vortex that pulls an enemy unit to Storm Spirit's location.",
+        "attrib": [],
+        "lore": "Raijin's thunderous, boisterous energy often draws others into an electrifying situation.",
+        "mc": ["60", "70", "80", "90"],
+        "cd": ["20", "18", "16", "14"],
+        "img": "/apps/dota2/images/dota_react/abilities/storm_spirit_electric_vortex.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "Overload",
+        "behavior": "Passive",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": "Yes",
+        "desc": "Casting a spell creates an electrical charge, which is released in a burst on Storm's next attack, dealing damage and slowing nearby enemies.",
+        "attrib": [
+          {
+            "key": "overload_aoe",
+            "header": "RADIUS:",
+            "value": "300"
+          },
+          {
+            "key": "overload_move_slow",
+            "header": "MOVEMENT SLOW:",
+            "value": "-80%"
+          },
+          {
+            "key": "overload_attack_slow",
+            "header": "ATTACK SLOW:",
+            "value": "-80"
+          },
+          {
+            "key": "overload_damage",
+            "header": "DAMAGE:",
+            "value": ["30", "50", "70", "90"]
+          },
+          {
+            "key": "shard_activation_radius",
+            "header": "ACTIVATION RADIUS:",
+            "value": "750"
+          },
+          {
+            "key": "shard_activation_charges",
+            "header": "SHARD ACTIVATION CHARGES:",
+            "value": "3",
+            "generated": true
+          },
+          {
+            "key": "shard_activation_duration",
+            "header": "SHARD ACTIVATION DURATION:",
+            "value": "12",
+            "generated": true
+          },
+          {
+            "key": "shard_manacost",
+            "header": "MANA COST:",
+            "value": "150"
+          },
+          {
+            "key": "shard_cooldown",
+            "header": "COOLDOWN:",
+            "value": "30"
+          },
+          {
+            "key": "shard_attack_speed_bonus",
+            "header": "ATTACK SPEED BONUS:",
+            "value": "15"
+          },
+          {
+            "key": "abilityduration",
+            "header": "DURATION:",
+            "value": "0.8"
+          }
+        ],
+        "lore": "Pow!  Zip!  Zap!",
+        "img": "/apps/dota2/images/dota_react/abilities/storm_spirit_overload.png"
+      },
+      {
+        "dname": "Ball Lightning",
+        "behavior": "Point Target",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "desc": "Storm Spirit becomes volatile electricity, charging across the battlefield until he depletes his mana or reaches his target. The activation mana cost is 15+7.5% of his total mana pool, and the cost per 100 units traveled is 15+0.7% of his total mana pool.  Damage is expressed in damage per 100 units traveled.",
+        "dmg": ["8", "12", "16"],
+        "attrib": [
+          {
+            "key": "ball_lightning_initial_mana_percentage",
+            "header": "BALL LIGHTNING INITIAL MANA PERCENTAGE:",
+            "value": "7.5",
+            "generated": true
+          },
+          {
+            "key": "ball_lightning_initial_mana_base",
+            "header": "BALL LIGHTNING INITIAL MANA BASE:",
+            "value": "15",
+            "generated": true
+          },
+          {
+            "key": "ball_lightning_move_speed",
+            "header": "SPEED:",
+            "value": ["1400", "1850", "2300"]
+          },
+          {
+            "key": "ball_lightning_aoe",
+            "header": "RADIUS:",
+            "value": "200"
+          },
+          {
+            "key": "ball_lightning_travel_cost_base",
+            "header": "BALL LIGHTNING TRAVEL COST BASE:",
+            "value": "15",
+            "generated": true
+          },
+          {
+            "key": "ball_lightning_travel_cost_percent",
+            "header": "MANA DRAIN PER 100 UNITS:",
+            "value": "0.7%"
+          },
+          {
+            "key": "ball_lightning_vision_radius",
+            "header": "BALL LIGHTNING VISION RADIUS:",
+            "value": "400",
+            "generated": true
+          },
+          {
+            "key": "blocker_duration",
+            "header": "BLOCKER DURATION:",
+            "value": "5",
+            "generated": true
+          },
+          {
+            "key": "scepter_remnant_interval",
+            "header": "SCEPTER REMNANT INTERVAL:",
+            "value": "300",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.3",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "30",
+            "generated": true
+          }
+        ],
+        "lore": "The Storm is coming in.",
+        "mc": "30",
+        "img": "/apps/dota2/images/dota_react/abilities/storm_spirit_ball_lightning.png"
       }
     ]
   },
@@ -2525,7 +3622,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Disabler", "Initiator", "Durable", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/sven.png?",
-    "imgHD": "https://i.imgur.com/d8HPdxy.jpg",
+    "imgHD": "https://i.imgur.com/rW70gHM.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/sven.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -2550,24 +3647,207 @@
     "legs": 2,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Storm Hammer",
+        "behavior": ["Unit Target", "AOE"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": [],
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Sven unleashes his magical gauntlet that deals damage and stuns enemy units in a small area around the target.",
+        "dmg": ["95", "170", "245", "320"],
+        "attrib": [
+          {
+            "key": "bolt_speed",
+            "header": "BOLT SPEED:",
+            "value": "1000",
+            "generated": true
+          },
+          {
+            "key": "bolt_stun_duration",
+            "header": "DURATION:",
+            "value": ["1.4", "1.6", "1.8", "2"]
+          },
+          {
+            "key": "bolt_aoe",
+            "header": "RADIUS:",
+            "value": "255"
+          },
+          {
+            "key": "vision_radius",
+            "header": "VISION RADIUS:",
+            "value": "225",
+            "generated": true
+          },
+          {
+            "key": "cast_range_bonus_scepter",
+            "header": "BONUS CAST RANGE:",
+            "value": "350"
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "600",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.2",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["110", "115", "120", "125"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["18", "16", "14", "12"],
+            "generated": true
+          }
+        ],
+        "lore": "The Rogue Knight's iron gauntlet, taken from the school of his father, strikes his foes to their core.",
+        "mc": ["110", "115", "120", "125"],
+        "cd": ["18", "16", "14", "12"],
+        "img": "/apps/dota2/images/dota_react/abilities/sven_storm_bolt.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Great Cleave",
+        "behavior": "Passive",
+        "bkbpierce": "Yes",
+        "desc": "Sven strikes with great force, cleaving all nearby enemy units with his attack.",
+        "attrib": [
+          {
+            "key": "cleave_starting_width",
+            "header": "CLEAVE STARTING WIDTH:",
+            "value": "150",
+            "generated": true
+          },
+          {
+            "key": "cleave_ending_width",
+            "header": "CLEAVE ENDING WIDTH:",
+            "value": "360",
+            "generated": true
+          },
+          {
+            "key": "cleave_distance",
+            "header": "CLEAVE DISTANCE:",
+            "value": "700",
+            "generated": true
+          },
+          {
+            "key": "great_cleave_damage",
+            "header": "CLEAVE DAMAGE:",
+            "value": ["25%", "50%", "75%", "100%"]
+          }
+        ],
+        "lore": "The Vigil Knights still seek to reclaim the stolen Outcast Blade from Sven, a weapon capable of cutting wide swaths through lesser warriors.",
+        "img": "/apps/dota2/images/dota_react/abilities/sven_great_cleave.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Warcry",
+        "behavior": ["No Target", "Instant Cast"],
+        "bkbpierce": "Yes",
+        "dispellable": "Yes",
+        "desc": "Sven's Warcry heartens his allied heroes for battle, increasing their armor and movement speed. Lasts 8 seconds.",
+        "attrib": [
+          {
+            "key": "movespeed",
+            "header": "BONUS SPEED:",
+            "value": ["10%", "14%", "18%", "22%"]
+          },
+          {
+            "key": "bonus_armor",
+            "header": "BONUS ARMOR:",
+            "value": ["6", "9", "12", "15"]
+          },
+          {
+            "key": "radius",
+            "header": "RADIUS:",
+            "value": "700"
+          },
+          {
+            "key": "duration",
+            "header": "DURATION:",
+            "value": "8"
+          },
+          {
+            "key": "shard_passive_armor",
+            "header": "PASSIVE BONUS ARMOR:",
+            "value": "7"
+          },
+          {
+            "key": "shard_radius",
+            "header": "PASSIVE RADIUS:",
+            "value": "1200"
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["30", "40", "50", "60"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["32", "28", "24", "20"],
+            "generated": true
+          }
+        ],
+        "lore": "Calling a few lines from the Vigil Codex fortifies Sven's obedience to his rogue code. So poetic!",
+        "mc": ["30", "40", "50", "60"],
+        "cd": ["32", "28", "24", "20"],
+        "img": "/apps/dota2/images/dota_react/abilities/sven_warcry.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "God's Strength",
+        "behavior": "No Target",
+        "dispellable": "No",
+        "desc": "Sven channels his rogue strength, granting bonus damage for 35 seconds.",
+        "attrib": [
+          {
+            "key": "gods_strength_damage",
+            "header": "BONUS DAMAGE:",
+            "value": ["120%", "160%", "200%"]
+          },
+          {
+            "key": "abilityduration",
+            "header": "ABILITYDURATION:",
+            "value": "35",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.3",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["100", "150", "200"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": "110",
+            "generated": true
+          }
+        ],
+        "lore": "With the strength that shattered the Sacred Helm, the Rogue Knight stands unopposed in melee combat.",
+        "mc": ["100", "150", "200"],
+        "cd": "110",
+        "img": "/apps/dota2/images/dota_react/abilities/sven_gods_strength.png"
       }
     ]
   },
@@ -2604,24 +3884,244 @@
     "legs": 2,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Avalanche",
+        "behavior": ["AOE", "Point Target"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": [],
+        "desc": "Bombards an area with rocks, continously doing small intervals of damage and stun to enemy units. Avalanche does 2x damage to units being tossed.",
+        "attrib": [],
+        "lore": "Inanimate rock becomes animate when called by the Stone Giant.",
+        "mc": "120",
+        "cd": ["26", "22", "18", "14"],
+        "img": "/apps/dota2/images/dota_react/abilities/tiny_avalanche.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Toss",
+        "behavior": ["Unit Target", "AOE"],
+        "dmg_type": "Magical",
+        "bkbpierce": "Yes",
+        "target_team": [],
+        "target_type": [],
+        "desc": "Grabs the nearest unit in a 300 radius around Tiny, ally or enemy, and launches it at the target unit or rune to deal damage where they land.",
+        "attrib": [],
+        "lore": "Tiny's gargantuan stature allows him to catapult even the sturdiest of warriors.",
+        "mc": ["90", "100", "110", "120"],
+        "cd": ["17", "15", "13", "11"],
+        "img": "/apps/dota2/images/dota_react/abilities/tiny_toss.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Craggy Exterior",
+        "behavior": ["Passive", "Hidden"],
+        "dmg_type": "Magical",
+        "desc": "Enemies that attack Tiny have a 20% chance of being stunned for 1 second and taking 100 damage. Affects enemies within 400 range of him. Procs after an attack impacts, and does not affect spell immune enemies.",
+        "attrib": [
+          {
+            "key": "stun_chance",
+            "header": "CHANCE TO STUN:",
+            "value": "20%"
+          },
+          {
+            "key": "stun_duration",
+            "header": "STUN DURATION:",
+            "value": "1"
+          },
+          {
+            "key": "damage",
+            "header": "DAMAGE:",
+            "value": "100"
+          },
+          {
+            "key": "radius",
+            "header": "RADIUS:",
+            "value": "400",
+            "generated": true
+          }
+        ],
+        "img": "/apps/dota2/images/dota_react/abilities/tiny_craggy_exterior.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "Tree Grab",
+        "behavior": "Unit Target",
+        "dmg_type": "Physical",
+        "bkbpierce": "Yes",
+        "dispellable": "No",
+        "target_team": [],
+        "target_type": "Tree",
+        "desc": "Grabs a tree to whack enemies on the head for a limited number of attacks. Grants bonus attack range. Attacks deal more damage and fully splash on units along the way. The tree can be thrown, to deal your attack to a unit at a distance.",
+        "attrib": [
+          {
+            "key": "attack_count",
+            "header": "ATTACK COUNT:",
+            "value": "5"
+          },
+          {
+            "key": "bonus_damage",
+            "header": "BONUS BASE DAMAGE:",
+            "value": "20"
+          },
+          {
+            "key": "bonus_damage_buildings",
+            "header": "BONUS BUILDING DAMAGE:",
+            "value": ["40%", "55%", "70%", "85%"]
+          },
+          {
+            "key": "attack_range",
+            "header": "ATTACK RANGE:",
+            "value": "350"
+          },
+          {
+            "key": "splash_width",
+            "header": "SPLASH WIDTH:",
+            "value": "200",
+            "generated": true
+          },
+          {
+            "key": "splash_range",
+            "header": "SPLASH RANGE:",
+            "value": "400",
+            "generated": true
+          },
+          {
+            "key": "splash_pct",
+            "header": "SPLASH DAMAGE:",
+            "value": ["40%", "60%", "80%", "100%"]
+          },
+          {
+            "key": "bat_increase",
+            "header": "BAT INCREASE:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "speed_reduction",
+            "header": "SPEED REDUCTION:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "165",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.2",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "40",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["19", "16", "13", "10"],
+            "generated": true
+          }
+        ],
+        "mc": "40",
+        "cd": ["19", "16", "13", "10"],
+        "img": "/apps/dota2/images/dota_react/abilities/tiny_tree_grab.png"
+      },
+      {
+        "dname": "Tree Throw",
+        "behavior": ["Unit Target", "Point Target", "Hidden"],
+        "dmg_type": "Physical",
+        "bkbpierce": "No",
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Throws the tree at the target unit, proccing your attack on it and splashing damage around the target.",
+        "attrib": [],
+        "lore": "Even enemies can share in Tiny's arbor ardor.",
+        "img": "/apps/dota2/images/dota_react/abilities/tiny_toss_tree.png"
+      },
+      {
+        "dname": "Tree Volley",
+        "behavior": ["Channeled", "Point Target", "AOE", "Hidden"],
+        "dmg_type": "Physical",
+        "bkbpierce": "Yes",
+        "desc": "Tiny channels to throw random trees within range towards the targeted area. Deals Tiny's attack damage to enemies in that area with each tree thrown.",
+        "attrib": [
+          {
+            "key": "speed",
+            "header": "SPEED:",
+            "value": "1000",
+            "generated": true
+          },
+          {
+            "key": "range",
+            "header": "RANGE:",
+            "value": "1200",
+            "generated": true
+          },
+          {
+            "key": "splash_radius",
+            "header": "TARGET RADIUS:",
+            "value": "400"
+          },
+          {
+            "key": "tree_grab_radius",
+            "header": "TREE GRAB RADIUS:",
+            "value": "700"
+          },
+          {
+            "key": "interval",
+            "header": "THROW INTERVAL:",
+            "value": "0.4"
+          },
+          {
+            "key": "bonus_damage",
+            "header": "BONUS DAMAGE:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "1200",
+            "generated": true
+          },
+          {
+            "key": "abilitychanneltime",
+            "header": "MAX CHANNEL TIME:",
+            "value": "2.4"
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.2",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "200",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": "15",
+            "generated": true
+          }
+        ],
+        "lore": "Sticks thrown from stones are like to shatter many bones.",
+        "mc": "200",
+        "cd": "15",
+        "img": "/apps/dota2/images/dota_react/abilities/tiny_tree_channel.png"
+      },
+      {
+        "dname": "Grow",
+        "behavior": "Passive",
+        "desc": "Tiny gains craggy mass, increasing his attack damage, and armor, and toss power while slowing his attack speed.",
+        "attrib": [],
+        "lore": "Watching a hill become a mountain is awe-inspiring - especially if the mountain begins laying waste to adversaries.",
+        "img": "/apps/dota2/images/dota_react/abilities/tiny_grow.png"
       }
     ]
   },
@@ -2658,24 +4158,247 @@
     "legs": 2,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Magic Missile",
+        "behavior": "Unit Target",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": [],
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Fires a magic missile at an enemy unit, stunning and dealing damage.",
+        "attrib": [
+          {
+            "key": "magic_missile_speed",
+            "header": "MAGIC MISSILE SPEED:",
+            "value": "1350",
+            "generated": true
+          },
+          {
+            "key": "magic_missile_stun",
+            "header": "STUN DURATION:",
+            "value": ["1.4", "1.5", "1.6", "1.7"]
+          },
+          {
+            "key": "magic_missile_damage",
+            "header": "DAMAGE:",
+            "value": ["90", "180", "270", "360"]
+          },
+          {
+            "key": "shard_bonus_cast_range",
+            "header": "SHARD BONUS CAST RANGE:",
+            "value": "100",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "CAST RANGE:",
+            "value": ["575", "600", "625", "650"]
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.3",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["100", "110", "120", "130"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["12", "11", "10", "9"],
+            "generated": true
+          }
+        ],
+        "lore": "A simple Skywrath technique, the magic missile is Shendel's primary tool for vengeance.",
+        "mc": ["100", "110", "120", "130"],
+        "cd": ["12", "11", "10", "9"],
+        "img": "/apps/dota2/images/dota_react/abilities/vengefulspirit_magic_missile.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Vengeance Aura",
+        "behavior": "Passive",
+        "bkbpierce": "Yes",
+        "target_team": "Friendly",
+        "desc": "Vengeful Spirit's presence increases the damage of nearby friendly heroes.",
+        "attrib": [
+          {
+            "key": "bonus_base_damage",
+            "header": "BASE DAMAGE BONUS:",
+            "value": ["11%", "18%", "25%", "32%"]
+          },
+          {
+            "key": "aura_radius",
+            "header": "RADIUS:",
+            "value": "1200"
+          },
+          {
+            "key": "scepter_illusion_damage_out_pct",
+            "header": "SCEPTER ILLUSION DAMAGE OUT PCT:",
+            "value": "100",
+            "generated": true
+          },
+          {
+            "key": "scepter_illusion_damage_in_pct",
+            "header": "SCEPTER ILLUSION DAMAGE IN PCT:",
+            "value": "100",
+            "generated": true
+          },
+          {
+            "key": "scepter_illusion_ms_bonus_pct",
+            "header": "SCEPTER ILLUSION MS BONUS PCT:",
+            "value": "12",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "1200",
+            "generated": true
+          }
+        ],
+        "lore": "Although they may not share her undying passion for revenge, allies do draw on her fanaticism in combat.",
+        "img": "/apps/dota2/images/dota_react/abilities/vengefulspirit_command_aura.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Wave of Terror",
+        "behavior": "Point Target",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": "Yes",
+        "desc": "Vengeful Spirit lets loose a wicked cry, weakening the armor of enemies and giving vision of the path ahead.",
+        "dmg": ["70", "90", "110", "130"],
+        "attrib": [
+          {
+            "key": "wave_speed",
+            "header": "WAVE SPEED:",
+            "value": "2000",
+            "generated": true
+          },
+          {
+            "key": "wave_width",
+            "header": "WAVE WIDTH:",
+            "value": "325",
+            "generated": true
+          },
+          {
+            "key": "armor_reduction",
+            "header": "ARMOR REDUCTION:",
+            "value": ["-3", "-4", "-5", "-6"]
+          },
+          {
+            "key": "vision_aoe",
+            "header": "VISION AOE:",
+            "value": "350",
+            "generated": true
+          },
+          {
+            "key": "vision_duration",
+            "header": "VISION DURATION:",
+            "value": "4"
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "1400",
+            "generated": true
+          },
+          {
+            "key": "abilityduration",
+            "header": "DEBUFF DURATION:",
+            "value": "8"
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.3",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["25", "30", "35", "40"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["16", "14", "12", "10"],
+            "generated": true
+          }
+        ],
+        "lore": "Shendel's haunting voice hints at her approaching vindication.",
+        "mc": ["25", "30", "35", "40"],
+        "cd": ["16", "14", "12", "10"],
+        "img": "/apps/dota2/images/dota_react/abilities/vengefulspirit_wave_of_terror.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "Nether Swap",
+        "behavior": "Unit Target",
+        "bkbpierce": "Yes",
+        "target_team": [],
+        "target_type": [],
+        "desc": "Instantaneously swaps positions with a target Hero, friend or enemy.  Nether Swap interrupts channeling abilities on the target. Enemy Swapped units take 50 damage Allied swapped units receive less damage for a short duration",
+        "attrib": [
+          {
+            "key": "scepter_radius",
+            "header": "SCEPTER RADIUS:",
+            "value": "700",
+            "generated": true
+          },
+          {
+            "key": "scepter_charge_reduction",
+            "header": "SCEPTER CHARGE REDUCTION:",
+            "value": "2",
+            "generated": true
+          },
+          {
+            "key": "damage_reduction",
+            "header": "DAMAGE REDUCTION:",
+            "value": ["30", "40", "50"]
+          },
+          {
+            "key": "damage_reduction_duration",
+            "header": "DAMAGE REDUCTION DURATION:",
+            "value": "3"
+          },
+          {
+            "key": "damage",
+            "header": "DAMAGE:",
+            "value": "50",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "CAST RANGE:",
+            "value": ["800", "950", "1100"]
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.4",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["100", "150", "200"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["50", "40", "30"],
+            "generated": true
+          }
+        ],
+        "lore": "Martyrdom is a small price to pay for vengeance.",
+        "mc": ["100", "150", "200"],
+        "cd": ["50", "40", "30"],
+        "img": "/apps/dota2/images/dota_react/abilities/vengefulspirit_nether_swap.png"
       }
     ]
   },
@@ -2712,24 +4435,135 @@
     "legs": 2,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Gale Force",
+        "behavior": ["Point Target", "Hidden"],
+        "bkbpierce": "No",
+        "desc": "Summons a strong wind that pushes all enemies in the target area towards the target direction. Vector Targeted. Cast Range: 1500 Mana Cost: 150 Cooldown: 30s.",
+        "attrib": [],
+        "lore": "At last Lyralei has learned to call upon the might of her true birthright.",
+        "mc": "150",
+        "cd": "30",
+        "img": "/apps/dota2/images/dota_react/abilities/windrunner_gale_force.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Shackleshot",
+        "behavior": "Unit Target",
+        "bkbpierce": "No",
+        "dispellable": [],
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Shackles the target to an enemy unit or tree in a line directly behind it.  If no unit or tree is present, the stun duration is reduced to 0.75,0.75,0.75,0.75.",
+        "dmg": "0",
+        "attrib": [
+          {
+            "key": "fail_stun_duration",
+            "header": "FAIL STUN DURATION:",
+            "value": "0.75",
+            "generated": true
+          },
+          {
+            "key": "stun_duration",
+            "header": "SHACKLE DURATION:",
+            "value": ["2", "2.6", "3.2", "3.8"]
+          },
+          {
+            "key": "shackle_distance",
+            "header": "SHACKLE DISTANCE:",
+            "value": "575",
+            "generated": true
+          },
+          {
+            "key": "arrow_speed",
+            "header": "ARROW SPEED:",
+            "value": "1650",
+            "generated": true
+          },
+          {
+            "key": "shackle_count",
+            "header": "SHACKLE COUNT:",
+            "value": "1",
+            "generated": true
+          },
+          {
+            "key": "shackle_angle",
+            "header": "SHACKLE ANGLE:",
+            "value": "23",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "800",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.15",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["70", "80", "90", "100"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["16", "14", "12", "10"],
+            "generated": true
+          }
+        ],
+        "lore": "Windranger's variety of bow skills includes an arrow with thick ropes attached to encumber any escaping target.",
+        "mc": ["70", "80", "90", "100"],
+        "cd": ["16", "14", "12", "10"],
+        "img": "/apps/dota2/images/dota_react/abilities/windrunner_shackleshot.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Powershot",
+        "behavior": ["Point Target", "Channeled"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "desc": "Windranger charges her bow for up to 1 second for a single powerful shot, which deals more damage the longer it is charged. The arrow damages enemies along its path. For each enemy that Powershot hits, its damage is reduced.",
+        "attrib": [],
+        "lore": "During her early years of training, Lyralei learned to fire powerful arrows that cleaved even trees to reach their targets.",
+        "mc": ["90", "100", "110", "120"],
+        "cd": ["12", "11", "10", "9"],
+        "img": "/apps/dota2/images/dota_react/abilities/windrunner_powershot.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "Windrun",
+        "behavior": ["No Target", "Instant Cast"],
+        "bkbpierce": "No",
+        "dispellable": "Yes",
+        "desc": "Increases movement speed and adds evasion from all physical attacks, while slowing movement of nearby enemies.",
+        "attrib": [],
+        "lore": "Lyralei enchants gusts of winds to fight incoming attacks.",
+        "mc": "50",
+        "cd": ["15", "14", "13", "12"],
+        "img": "/apps/dota2/images/dota_react/abilities/windrunner_windrun.png"
+      },
+      {
+        "dname": "Focus Fire",
+        "behavior": "Unit Target",
+        "bkbpierce": "Yes",
+        "dispellable": "No",
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic", "Building"],
+        "desc": "Windranger channels the wind to gain 300 400 500 additional attack speed against a single enemy unit or structure, though with a reduction to her attack damage.  Extra damage from secondary item effects is not reduced.",
+        "attrib": [],
+        "lore": "Lyralei's ability to bombard opponents with a flurry of arrows is unparalleled - even at the expense of accuracy.",
+        "mc": ["75", "100", "125"],
+        "cd": ["70", "50", "30"],
+        "img": "/apps/dota2/images/dota_react/abilities/windrunner_focusfire.png"
+      },
+      {
+        "dname": "Focus Fire Cancel",
+        "behavior": ["Hidden", "No Target"],
+        "desc": "End your Focus Fire early.",
+        "attrib": [],
+        "img": "/apps/dota2/images/dota_react/abilities/windrunner_focusfire_cancel.png"
       }
     ]
   },
@@ -2766,24 +4600,273 @@
     "legs": 2,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Heavenly Jump",
+        "behavior": ["No Target", "Instant Cast"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "desc": "Zeus performs a Heavenly Jump shocking the closest visible nearby enemy (prioritizing heroes), dealing damage, reducing their movement, attack speed and increasing their cast time. If Zeus was moving forward, he will jump towards that direction. Zeus gets 900 unobstructed vision around him for 3 seconds.",
+        "attrib": [],
+        "mc": ["50", "60", "70", "80"],
+        "cd": ["25", "20", "15", "10"],
+        "img": "/apps/dota2/images/dota_react/abilities/zuus_heavenly_jump.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Arc Lightning",
+        "behavior": "Unit Target",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Hurls a bolt of lightning that leaps through nearby enemy units.",
+        "attrib": [
+          {
+            "key": "arc_damage",
+            "header": "DAMAGE:",
+            "value": ["90", "120", "150", "180"]
+          },
+          {
+            "key": "radius",
+            "header": "RADIUS:",
+            "value": "500",
+            "generated": true
+          },
+          {
+            "key": "jump_count",
+            "header": "JUMPS:",
+            "value": ["5", "7", "9", "15"]
+          },
+          {
+            "key": "jump_delay",
+            "header": "JUMP DELAY:",
+            "value": "0.25",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "850",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.2",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["80", "85", "90", "95"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": "1.6",
+            "generated": true
+          }
+        ],
+        "lore": "Arc Lightning is Zeus' favorite spell to use against puny mortals.",
+        "mc": ["80", "85", "90", "95"],
+        "cd": "1.6",
+        "img": "/apps/dota2/images/dota_react/abilities/zuus_arc_lightning.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Lightning Bolt",
+        "behavior": ["Unit Target", "Point Target"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Calls down a bolt of lightning to strike an enemy unit, causing damage and a mini-stun. When cast, Lightning Bolt briefly provides unobstructed vision and True Sight around the target in a 750 radius. Can be cast on the ground, affecting the closest enemy hero in 325 range.",
+        "dmg": ["125", "200", "275", "350"],
+        "attrib": [
+          {
+            "key": "true_sight_radius",
+            "header": "TRUE SIGHT RADIUS:",
+            "value": "750",
+            "generated": true
+          },
+          {
+            "key": "sight_radius_day",
+            "header": "SIGHT RADIUS:",
+            "value": "750"
+          },
+          {
+            "key": "sight_radius_night",
+            "header": "SIGHT RADIUS NIGHT:",
+            "value": "750",
+            "generated": true
+          },
+          {
+            "key": "sight_duration",
+            "header": "SIGHT DURATION:",
+            "value": "5"
+          },
+          {
+            "key": "spread_aoe",
+            "header": "SPREAD AOE:",
+            "value": "325",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "CAST RANGE:",
+            "value": ["700", "750", "800", "850"]
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.3",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["120", "125", "130", "135"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": "6",
+            "generated": true
+          }
+        ],
+        "lore": "A shocking punishment for rebellious heathen.",
+        "mc": ["120", "125", "130", "135"],
+        "cd": "6",
+        "img": "/apps/dota2/images/dota_react/abilities/zuus_lightning_bolt.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "Nimbus",
+        "behavior": ["Point Target", "AOE", "Hidden"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "desc": "Creates a storm cloud anywhere on the map that automatically casts Lightning Bolt on nearby enemies.",
+        "attrib": [
+          {
+            "key": "cloud_duration",
+            "header": "DURATION:",
+            "value": "30"
+          },
+          {
+            "key": "cloud_bolt_interval",
+            "header": "LIGHTNING BOLT BASE COOLDOWN:",
+            "value": "2.5"
+          },
+          {
+            "key": "cloud_radius",
+            "header": "CLOUD RADIUS:",
+            "value": "450",
+            "generated": true
+          },
+          {
+            "key": "hits_to_kill_tooltip",
+            "header": "HITS TO DESTROY:",
+            "value": "8"
+          },
+          {
+            "key": "creep_hits_to_kill_tooltip",
+            "header": "CREEP HITS TO DESTROY:",
+            "value": "16"
+          },
+          {
+            "key": "cloud_bounty_tooltip",
+            "header": "CLOUD BOUNTY TOOLTIP:",
+            "value": "125",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.2",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "325",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": "45",
+            "generated": true
+          }
+        ],
+        "mc": "325",
+        "cd": "45",
+        "img": "/apps/dota2/images/dota_react/abilities/zuus_cloud.png"
+      },
+      {
+        "dname": "Static Field",
+        "behavior": ["Passive", "Hidden"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "desc": "Zeus shocks any enemy that he attacks or is hit by his abilities, causing damage equal to 9% of their current health.",
+        "attrib": [],
+        "lore": "The air crackles with static when the Thundergod walks the world.",
+        "img": "/apps/dota2/images/dota_react/abilities/zuus_static_field.png"
+      },
+      {
+        "dname": "Thundergod's Wrath",
+        "behavior": "No Target",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "desc": "Strikes all enemy heroes with a bolt of lightning, no matter where they may be.  Thundergod's Wrath also provides True Sight around each hero struck.  If an enemy hero is invisible, it takes no damage, but the True Sight is still created at that hero's location.",
+        "attrib": [
+          {
+            "key": "sight_radius_day",
+            "header": "TRUE SIGHT RADIUS:",
+            "value": "500"
+          },
+          {
+            "key": "sight_radius_night",
+            "header": "SIGHT RADIUS NIGHT:",
+            "value": "500",
+            "generated": true
+          },
+          {
+            "key": "sight_duration",
+            "header": "DURATION:",
+            "value": "3"
+          },
+          {
+            "key": "damage",
+            "header": "DAMAGE:",
+            "value": ["300", "425", "550"]
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.4",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["300", "400", "500"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["130", "125", "120"],
+            "generated": true
+          }
+        ],
+        "lore": "The Lord of Heaven smites all who oppose him, near or far.",
+        "mc": ["300", "400", "500"],
+        "cd": ["130", "125", "120"],
+        "img": "/apps/dota2/images/dota_react/abilities/zuus_thundergods_wrath.png"
       }
     ]
   },
@@ -2795,7 +4878,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Support", "Disabler", "Initiator", "Durable", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/kunkka.png?",
-    "imgHD": "https://i.imgur.com/NeBIPaC.jpg",
+    "imgHD": "https://i.imgur.com/Sdwhu5o.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/kunkka.png?",
     "base_health": 200,
     "base_health_regen": 0.75,
@@ -2820,24 +4903,355 @@
     "legs": 2,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Tidal Wave",
+        "behavior": ["Point Target", "Hidden"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": "Yes",
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Releases a Tidal Wave that spawns behind Kunkka. Deals damage and drags enemies along it for the duration. Enemies cannot attack while being dragged.",
+        "attrib": [
+          {
+            "key": "speed",
+            "header": "SPEED:",
+            "value": "700"
+          },
+          {
+            "key": "radius",
+            "header": "RADIUS:",
+            "value": "750"
+          },
+          {
+            "key": "damage",
+            "header": "DAMAGE:",
+            "value": "250",
+            "generated": true
+          },
+          {
+            "key": "duration",
+            "header": "DURATION:",
+            "value": "1.25"
+          },
+          {
+            "key": "knockback_distance",
+            "header": "KNOCKBACK DISTANCE:",
+            "value": "600"
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "1400",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.2",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "75",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": "12",
+            "generated": true
+          }
+        ],
+        "mc": "75",
+        "cd": "12",
+        "img": "/apps/dota2/images/dota_react/abilities/kunkka_tidal_wave.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Torrent",
+        "behavior": ["AOE", "Point Target"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": "Yes",
+        "desc": "Summons a rising torrent that, after a short delay, hurls enemy units into the sky, stunning, dealing damage and slowing movement speed.",
+        "attrib": [
+          {
+            "key": "radius",
+            "header": "RADIUS:",
+            "value": "225"
+          },
+          {
+            "key": "movespeed_bonus",
+            "header": "MOVE SLOW:",
+            "value": ["-25%", "-30%", "-35%", "-40%"]
+          },
+          {
+            "key": "slow_duration",
+            "header": "SLOW DURATION:",
+            "value": ["1", "2", "3", "4"]
+          },
+          {
+            "key": "stun_duration",
+            "header": "STUN DURATION:",
+            "value": "1.6"
+          },
+          {
+            "key": "delay",
+            "header": "DELAY:",
+            "value": "1.6"
+          },
+          {
+            "key": "torrent_damage",
+            "header": "DAMAGE:",
+            "value": ["75", "150", "225", "300"]
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "1300",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.4",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["90", "100", "110", "120"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["16", "14", "12", "10"],
+            "generated": true
+          }
+        ],
+        "lore": "An ancestral rush of water explodes from the center of the world, called upon by the Admiral.",
+        "mc": ["90", "100", "110", "120"],
+        "cd": ["16", "14", "12", "10"],
+        "img": "/apps/dota2/images/dota_react/abilities/kunkka_torrent.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Torrent Storm",
+        "behavior": ["No Target", "Hidden"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "desc": "Releases a visible Torrent in a random area around Kunkka once every 0.25 for 5 seconds. Spawns within 1100 range of him.",
+        "attrib": [
+          {
+            "key": "torrent_interval",
+            "header": "TORRENT INTERVAL:",
+            "value": "0.25",
+            "generated": true
+          },
+          {
+            "key": "torrent_duration",
+            "header": "TORRENT DURATION:",
+            "value": "5",
+            "generated": true
+          },
+          {
+            "key": "torrent_min_distance",
+            "header": "TORRENT MIN DISTANCE:",
+            "value": "300",
+            "generated": true
+          },
+          {
+            "key": "torrent_max_distance",
+            "header": "TORRENT MAX DISTANCE:",
+            "value": "1100",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.4",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": "250",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": "70",
+            "generated": true
+          }
+        ],
+        "lore": "A hundred leagues of dry land couldn't keep these seas at bay.",
+        "mc": "250",
+        "cd": "70",
+        "img": "/apps/dota2/images/dota_react/abilities/kunkka_torrent_storm.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "Tidebringer",
+        "behavior": ["Unit Target", "Autocast", "Attack Modifier"],
+        "dmg_type": "Physical",
+        "bkbpierce": "Yes",
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Kunkka's legendary sword grants increased damage and cleaves a large area of effect in front of him for a single strike.",
+        "attrib": [
+          {
+            "key": "cleave_starting_width",
+            "header": "CLEAVE STARTING WIDTH:",
+            "value": "150",
+            "generated": true
+          },
+          {
+            "key": "cleave_ending_width",
+            "header": "CLEAVE ENDING WIDTH:",
+            "value": ["500", "550", "600", "650"],
+            "generated": true
+          },
+          {
+            "key": "cleave_distance",
+            "header": "CLEAVE RANGE:",
+            "value": ["650", "800", "950", "1100"]
+          },
+          {
+            "key": "damage_bonus",
+            "header": "DAMAGE BONUS:",
+            "value": ["30", "60", "90", "120"]
+          },
+          {
+            "key": "cleave_damage",
+            "header": "CLEAVE DAMAGE:",
+            "value": "150%"
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "150",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["13", "10", "7", "4"],
+            "generated": true
+          }
+        ],
+        "lore": "A lost Claddish soul inhabits Kunkka's trusty Tidebringer, empowering it to destroy demons of the Cataract.",
+        "cd": ["13", "10", "7", "4"],
+        "img": "/apps/dota2/images/dota_react/abilities/kunkka_tidebringer.png"
+      },
+      {
+        "dname": "X Marks the Spot",
+        "behavior": "Unit Target",
+        "bkbpierce": "No",
+        "dispellable": "No",
+        "target_team": "Both",
+        "target_type": "Hero",
+        "desc": "Targets a friendly or enemy Hero, marks their position with an X, and returns them to it after several seconds.  Kunkka can trigger the return at any time during the duration. Lasts twice as long on allied heroes.",
+        "attrib": [],
+        "lore": "The Admiral's set of arcane abilities includes some that can be used for battle as well as entertainment.",
+        "mc": "50",
+        "cd": ["30", "24", "18", "12"],
+        "img": "/apps/dota2/images/dota_react/abilities/kunkka_x_marks_the_spot.png"
+      },
+      {
+        "dname": "Return",
+        "behavior": ["Hidden", "No Target"],
+        "bkbpierce": "No",
+        "desc": "Returns the marked hero to the X.",
+        "attrib": [],
+        "mc": "0",
+        "cd": "1",
+        "img": "/apps/dota2/images/dota_react/abilities/kunkka_return.png"
+      },
+      {
+        "dname": "Ghostship",
+        "behavior": "Point Target",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": "No",
+        "desc": "Summons a ghostly ship that sails through the battle before smashing apart, damaging and stunning all enemies caught near the wreckage. Allied heroes touched by the Ghostship are given a swig of The Admiral's Rum, receiving bonus movement speed and a delayed reaction to incoming damage.",
+        "dmg": ["400", "500", "600"],
+        "attrib": [
+          {
+            "key": "tooltip_delay",
+            "header": "IMPACT DELAY:",
+            "value": "3.1"
+          },
+          {
+            "key": "ghostship_distance",
+            "header": "RANGE:",
+            "value": "2000"
+          },
+          {
+            "key": "ghostship_width",
+            "header": "WIDTH:",
+            "value": "425"
+          },
+          {
+            "key": "movespeed_bonus",
+            "header": "RUM BONUS SPEED:",
+            "value": "12%"
+          },
+          {
+            "key": "buff_duration",
+            "header": "RUM DURATION:",
+            "value": "10"
+          },
+          {
+            "key": "stun_duration",
+            "header": "STUN DURATION:",
+            "value": "1.4"
+          },
+          {
+            "key": "ghostship_speed",
+            "header": "GHOSTSHIP SPEED:",
+            "value": "650",
+            "generated": true
+          },
+          {
+            "key": "ghostship_absorb",
+            "header": "DAMAGE DELAYED:",
+            "value": "40%"
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "1000",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.3",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["125", "175", "225"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["80", "70", "60"],
+            "generated": true
+          }
+        ],
+        "lore": "The final ship of the Claddish Navy is nothing but a phantom, but it is all too real to the enemies of the Admiral.",
+        "mc": ["125", "175", "225"],
+        "cd": ["80", "70", "60"],
+        "img": "/apps/dota2/images/dota_react/abilities/kunkka_ghostship.png"
       }
     ]
   },
@@ -2874,24 +5288,230 @@
     "legs": 2,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Dragon Slave",
+        "behavior": ["Unit Target", "Point Target"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Lina channels the breath of a dragon, sending out a wave of fire that scorches every enemy in its path.",
+        "dmg": ["85", "160", "235", "310"],
+        "attrib": [
+          {
+            "key": "dragon_slave_speed",
+            "header": "DRAGON SLAVE SPEED:",
+            "value": "1200",
+            "generated": true
+          },
+          {
+            "key": "dragon_slave_width_initial",
+            "header": "DRAGON SLAVE WIDTH INITIAL:",
+            "value": "275",
+            "generated": true
+          },
+          {
+            "key": "dragon_slave_width_end",
+            "header": "DRAGON SLAVE WIDTH END:",
+            "value": "200",
+            "generated": true
+          },
+          {
+            "key": "dragon_slave_distance",
+            "header": "DRAGON SLAVE DISTANCE:",
+            "value": "1075",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "1075",
+            "generated": true
+          },
+          {
+            "key": "abilityduration",
+            "header": "ABILITYDURATION:",
+            "value": "0.6875",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.45",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["100", "115", "130", "145"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": "9",
+            "generated": true
+          }
+        ],
+        "lore": "In the scorched barren of Misrule, Lina learned to manipulate the fiery breath of the Desert Wyrm as a form of entertainment.",
+        "mc": ["100", "115", "130", "145"],
+        "cd": "9",
+        "img": "/apps/dota2/images/dota_react/abilities/lina_dragon_slave.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Light Strike Array",
+        "behavior": ["Point Target", "AOE"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": [],
+        "desc": "Summons a column of flames that damages and stuns enemies.",
+        "attrib": [
+          {
+            "key": "light_strike_array_aoe",
+            "header": "RADIUS:",
+            "value": "250"
+          },
+          {
+            "key": "light_strike_array_delay_time",
+            "header": "CAST DELAY:",
+            "value": "0.5"
+          },
+          {
+            "key": "light_strike_array_stun_duration",
+            "header": "STUN DURATION:",
+            "value": ["1.6", "1.9", "2.2", "2.5"]
+          },
+          {
+            "key": "light_strike_array_damage",
+            "header": "DAMAGE:",
+            "value": ["100", "150", "200", "250"]
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "625",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.45",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["100", "105", "110", "115"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["13", "11", "9", "7"],
+            "generated": true
+          }
+        ],
+        "lore": "Lina's essence allows her to focus the sun's energies, causing air to combust at will.",
+        "mc": ["100", "105", "110", "115"],
+        "cd": ["13", "11", "9", "7"],
+        "img": "/apps/dota2/images/dota_react/abilities/lina_light_strike_array.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Fiery Soul",
+        "behavior": "Passive",
+        "dispellable": "No",
+        "desc": "Grants bonus attack and movement speed each time Lina hits an enemy with a spell. Stacks with itself. Lasts 18 seconds.",
+        "attrib": [
+          {
+            "key": "fiery_soul_attack_speed_bonus",
+            "header": "ATTACK SPEED BONUS:",
+            "value": ["10", "20", "30", "40"]
+          },
+          {
+            "key": "fiery_soul_move_speed_bonus",
+            "header": "MOVE SPEED BONUS:",
+            "value": ["1.5%", "2%", "2.5%", "3%"]
+          },
+          {
+            "key": "fiery_soul_max_stacks",
+            "header": "MAX STACKS:",
+            "value": "7"
+          },
+          {
+            "key": "fiery_soul_stack_duration",
+            "header": "DURATION:",
+            "value": "18"
+          },
+          {
+            "key": "shard_bonus_spell_damage",
+            "header": "SHARD BONUS SPELL DAMAGE:",
+            "value": "15",
+            "generated": true
+          }
+        ],
+        "lore": "Dancing flames embody Lina's playful nature, bringing out her true blazing self.",
+        "img": "/apps/dota2/images/dota_react/abilities/lina_fiery_soul.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "Laguna Blade",
+        "behavior": "Unit Target",
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Fires off a bolt of lightning at a single enemy unit, dealing massive damage.",
+        "attrib": [
+          {
+            "key": "damage",
+            "header": "DAMAGE:",
+            "value": ["500", "700", "900"]
+          },
+          {
+            "key": "cast_range_scepter",
+            "header": "CAST RANGE SCEPTER:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "damage_delay",
+            "header": "DAMAGE DELAY:",
+            "value": "0.25",
+            "generated": true
+          },
+          {
+            "key": "scepter_width",
+            "header": "SCEPTER WIDTH:",
+            "value": "125",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "600",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.45",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["150", "300", "450"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["70", "60", "50"],
+            "generated": true
+          }
+        ],
+        "lore": "The air around Lina becomes so intensely torrid that it scorches a foe that comes too close with white-hot lightning.",
+        "mc": ["150", "300", "450"],
+        "cd": ["70", "60", "50"],
+        "img": "/apps/dota2/images/dota_react/abilities/lina_laguna_blade.png"
       }
     ]
   },
@@ -2928,24 +5548,146 @@
     "legs": 2,
     "abilities": [
       {
-        "dname": "Mana Break",
-        "desc": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_break.png"
+        "dname": "Earth Spike",
+        "behavior": ["Point Target", "Unit Target"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "dispellable": [],
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Rock spikes burst from the earth along a straight path. Enemy units are hurled into the air, then are stunned and take damage when they fall.",
+        "dmg": ["80", "140", "200", "260"],
+        "attrib": [
+          {
+            "key": "width",
+            "header": "WIDTH:",
+            "value": "125",
+            "generated": true
+          },
+          {
+            "key": "duration",
+            "header": "STUN DURATION:",
+            "value": ["1.4", "1.8", "2.2", "2.6"]
+          },
+          {
+            "key": "length_buffer",
+            "header": "LENGTH BUFFER:",
+            "value": "275",
+            "generated": true
+          },
+          {
+            "key": "speed",
+            "header": "SPEED:",
+            "value": "1800",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "575",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0.3",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["85", "110", "135", "160"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": "12",
+            "generated": true
+          }
+        ],
+        "lore": "The Demon Witch exercises his demonic covenant, opening a fissure from hell.",
+        "mc": ["85", "110", "135", "160"],
+        "cd": "12",
+        "img": "/apps/dota2/images/dota_react/abilities/lion_impale.png"
       },
       {
-        "dname": "Spell Shield",
-        "desc": "Increases Anti-Mage's resistance to magic damage.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_spell_shield.png"
+        "dname": "Hex",
+        "behavior": "Unit Target",
+        "bkbpierce": "No",
+        "dispellable": [],
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Transforms an enemy unit into a harmless beast, with all special abilities disabled.",
+        "attrib": [
+          {
+            "key": "duration",
+            "header": "DURATION:",
+            "value": ["2.5", "3", "3.5", "4"]
+          },
+          {
+            "key": "movespeed",
+            "header": "MOVESPEED:",
+            "value": "120",
+            "generated": true
+          },
+          {
+            "key": "abilitycastrange",
+            "header": "ABILITYCASTRANGE:",
+            "value": "500",
+            "generated": true
+          },
+          {
+            "key": "abilitycastpoint",
+            "header": "ABILITYCASTPOINT:",
+            "value": "0",
+            "generated": true
+          },
+          {
+            "key": "abilitymanacost",
+            "header": "ABILITYMANACOST:",
+            "value": ["125", "150", "175", "200"],
+            "generated": true
+          },
+          {
+            "key": "abilitycooldown",
+            "header": "ABILITYCOOLDOWN:",
+            "value": ["24", "20", "16", "12"],
+            "generated": true
+          }
+        ],
+        "lore": "Lion is compelled to share his transfiguration, twisting the essence of those who oppose him.",
+        "mc": ["125", "150", "175", "200"],
+        "cd": ["24", "20", "16", "12"],
+        "img": "/apps/dota2/images/dota_react/abilities/lion_voodoo.png"
       },
       {
-        "dname": "Counterspell",
-        "desc": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_counterspell.png"
+        "dname": "Mana Drain",
+        "behavior": ["Unit Target", "Channeled"],
+        "bkbpierce": "No",
+        "dispellable": "No",
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "CHANNELED - Absorbs the magical energies of a target enemy unit by taking mana from it every second.",
+        "attrib": [],
+        "lore": "Lesser magi are nothing more than a source of magical restoration for the Demon Witch.",
+        "mc": "10",
+        "cd": ["15", "12", "9", "6"],
+        "img": "/apps/dota2/images/dota_react/abilities/lion_mana_drain.png"
       },
       {
-        "dname": "Mana Void",
-        "desc": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned.",
-        "img": "/apps/dota2/images/dota_react/abilities/antimage_mana_void.png"
+        "dname": "Finger of Death",
+        "behavior": ["Unit Target", "AOE"],
+        "dmg_type": "Magical",
+        "bkbpierce": "No",
+        "target_team": "Enemy",
+        "target_type": ["Hero", "Basic"],
+        "desc": "Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes.",
+        "attrib": [],
+        "lore": "Lion's disfigured hand is also the source of his greatest power, capable of flooding victims with malefic force.",
+        "mc": ["200", "400", "600"],
+        "cd": ["160", "100", "40"],
+        "img": "/apps/dota2/images/dota_react/abilities/lion_finger_of_death.png"
       }
     ]
   },
@@ -3065,7 +5807,7 @@
     "attack_type": "Melee",
     "roles": ["Initiator", "Durable", "Disabler", "Nuker", "Carry"],
     "img": "/apps/dota2/images/dota_react/heroes/tidehunter.png?",
-    "imgHD": "https://i.imgur.com/yKR74dA.jpg",
+    "imgHD": "https://i.imgur.com/tve06Pb.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/tidehunter.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -3335,7 +6077,7 @@
     "attack_type": "Ranged",
     "roles": ["Carry", "Nuker", "Pusher"],
     "img": "/apps/dota2/images/dota_react/heroes/tinker.png?",
-    "imgHD": "https://i.imgur.com/EaDnIAh.jpg",
+    "imgHD": "https://i.imgur.com/At548Dg.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/tinker.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -3875,6 +6617,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Escape"],
     "img": "/apps/dota2/images/dota_react/heroes/phantom_assassin.png?",
+    "imgHD": "https://i.imgur.com/z1Xb1Oc.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/phantom_assassin.png?",
     "base_health": 200,
     "base_health_regen": 0.75,
@@ -4252,6 +6995,7 @@
     "attack_type": "Melee",
     "roles": ["Initiator", "Disabler", "Durable", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/rattletrap.png?",
+    "imgHD": "https://i.imgur.com/ehqcjAf.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/rattletrap.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -4305,6 +7049,7 @@
     "attack_type": "Ranged",
     "roles": ["Carry", "Support", "Nuker", "Pusher", "Disabler"],
     "img": "/apps/dota2/images/dota_react/heroes/leshrac.png?",
+    "imgHD": "https://i.imgur.com/6T9QKOp.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/leshrac.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -4412,6 +7157,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Durable", "Jungler", "Escape", "Disabler"],
     "img": "/apps/dota2/images/dota_react/heroes/life_stealer.png?",
+    "imgHD": "https://i.imgur.com/prqewWx.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/life_stealer.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -4465,6 +7211,7 @@
     "attack_type": "Melee",
     "roles": ["Initiator", "Jungler", "Escape", "Disabler"],
     "img": "/apps/dota2/images/dota_react/heroes/dark_seer.png?",
+    "imgHD": "https://i.imgur.com/5MMMH5l.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/dark_seer.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -4788,6 +7535,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Pusher", "Escape", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/broodmother.png?",
+    "imgHD": "https://i.imgur.com/DIkj2PO.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/broodmother.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -5003,6 +7751,7 @@
     "attack_type": "Ranged",
     "roles": ["Initiator", "Jungler", "Disabler", "Escape"],
     "img": "/apps/dota2/images/dota_react/heroes/batrider.png?",
+    "imgHD": "https://i.imgur.com/lp89MDN.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/batrider.png?",
     "base_health": 200,
     "base_health_regen": 1.75,
@@ -5056,6 +7805,7 @@
     "attack_type": "Ranged",
     "roles": ["Support", "Jungler", "Pusher"],
     "img": "/apps/dota2/images/dota_react/heroes/chen.png?",
+    "imgHD": "https://i.imgur.com/DjFclqE.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/chen.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -5163,6 +7913,7 @@
     "attack_type": "Ranged",
     "roles": ["Support", "Disabler", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/ancient_apparition.png?",
+    "imgHD": "https://i.imgur.com/fPUXQQ1.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/ancient_apparition.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -5216,6 +7967,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Disabler", "Initiator", "Durable", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/doom_bringer.png?",
+    "imgHD": "https://i.imgur.com/jnPEP4X.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/doom_bringer.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -5377,6 +8129,7 @@
     "attack_type": "Ranged",
     "roles": ["Carry", "Nuker", "Disabler"],
     "img": "/apps/dota2/images/dota_react/heroes/gyrocopter.png?",
+    "imgHD": "https://i.imgur.com/H7YWZ4m.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/gyrocopter.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -5430,6 +8183,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Support", "Durable", "Disabler", "Initiator", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/alchemist.png?",
+    "imgHD": "https://i.imgur.com/gXbLS0i.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/alchemist.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -5699,6 +8453,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Initiator", "Durable", "Disabler", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/brewmaster.png?",
+    "imgHD": "https://i.imgur.com/ZIOolQj.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/brewmaster.png?",
     "base_health": 200,
     "base_health_regen": 0.5,
@@ -5806,6 +8561,7 @@
     "attack_type": "Ranged",
     "roles": ["Carry", "Pusher", "Jungler", "Durable"],
     "img": "/apps/dota2/images/dota_react/heroes/lone_druid.png?",
+    "imgHD": "https://i.imgur.com/3YFP0ka.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/lone_druid.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -5859,6 +8615,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Disabler", "Durable", "Pusher", "Initiator"],
     "img": "/apps/dota2/images/dota_react/heroes/chaos_knight.png?",
+    "imgHD": "https://i.imgur.com/V8LykAj.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/chaos_knight.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -6020,6 +8777,7 @@
     "attack_type": "Melee",
     "roles": ["Support", "Nuker", "Disabler", "Durable", "Initiator"],
     "img": "/apps/dota2/images/dota_react/heroes/ogre_magi.png?",
+    "imgHD": "https://i.imgur.com/HdFGeif.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/ogre_magi.png?",
     "base_health": 200,
     "base_health_regen": 3.25,
@@ -6073,6 +8831,7 @@
     "attack_type": "Melee",
     "roles": ["Support", "Durable", "Disabler", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/undying.png?",
+    "imgHD": "https://i.imgur.com/Lyk5N6V.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/undying.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -6126,6 +8885,7 @@
     "attack_type": "Ranged",
     "roles": ["Support", "Disabler", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/rubick.png?",
+    "imgHD": "https://i.imgur.com/vnWQNg7.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/rubick.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -6233,6 +8993,7 @@
     "attack_type": "Melee",
     "roles": ["Disabler", "Nuker", "Initiator", "Escape"],
     "img": "/apps/dota2/images/dota_react/heroes/nyx_assassin.png?",
+    "imgHD": "https://i.imgur.com/eJBWfDO.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/nyx_assassin.png?",
     "base_health": 200,
     "base_health_regen": 2,
@@ -6787,6 +9548,7 @@
     "attack_type": "Ranged",
     "roles": ["Carry", "Pusher", "Disabler", "Durable"],
     "img": "/apps/dota2/images/dota_react/heroes/troll_warlord.png?",
+    "imgHD": "https://i.imgur.com/Jz6gZvW.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/troll_warlord.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -6840,6 +9602,7 @@
     "attack_type": "Melee",
     "roles": ["Durable", "Initiator", "Disabler", "Nuker", "Escape"],
     "img": "/apps/dota2/images/dota_react/heroes/centaur.png?",
+    "imgHD": "https://i.imgur.com/lhFYNCO.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/centaur.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -7001,6 +9764,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Durable", "Initiator", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/bristleback.png?",
+    "imgHD": "https://i.imgur.com/s69ec8g.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/bristleback.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -7054,6 +9818,7 @@
     "attack_type": "Melee",
     "roles": ["Initiator", "Disabler", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/tusk.png?",
+    "imgHD": "https://i.imgur.com/WeLYTdx.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/tusk.png?",
     "base_health": 200,
     "base_health_regen": 0.75,
@@ -7161,6 +9926,7 @@
     "attack_type": "Melee",
     "roles": ["Support", "Carry", "Durable"],
     "img": "/apps/dota2/images/dota_react/heroes/abaddon.png?",
+    "imgHD": "https://i.imgur.com/BpSTIkR.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/abaddon.png?",
     "base_health": 200,
     "base_health_regen": 1,
@@ -7214,6 +9980,7 @@
     "attack_type": "Melee",
     "roles": ["Initiator", "Disabler", "Nuker", "Durable"],
     "img": "/apps/dota2/images/dota_react/heroes/elder_titan.png?",
+    "imgHD": "https://i.imgur.com/U6g3ZL3.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/elder_titan.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -7375,6 +10142,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Escape", "Nuker", "Disabler", "Initiator"],
     "img": "/apps/dota2/images/dota_react/heroes/ember_spirit.png?",
+    "imgHD": "https://i.imgur.com/LCHqotv.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/ember_spirit.png?",
     "base_health": 200,
     "base_health_regen": 0.75,
@@ -7536,6 +10304,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Pusher", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/terrorblade.png?",
+    "imgHD": "https://i.imgur.com/4WrNH3U.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/terrorblade.png?",
     "base_health": 200,
     "base_health_regen": 1,
@@ -7643,6 +10412,7 @@
     "attack_type": "Ranged",
     "roles": ["Support", "Nuker", "Disabler", "Escape"],
     "img": "/apps/dota2/images/dota_react/heroes/oracle.png?",
+    "imgHD": "https://i.imgur.com/Mj1KGsI.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/oracle.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -7750,6 +10520,7 @@
     "attack_type": "Ranged",
     "roles": ["Carry", "Escape", "Nuker"],
     "img": "/apps/dota2/images/dota_react/heroes/arc_warden.png?",
+    "imgHD": "https://i.imgur.com/z3ILWU8.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/arc_warden.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -7857,6 +10628,7 @@
     "attack_type": "Ranged",
     "roles": ["Support", "Nuker", "Disabler", "Escape"],
     "img": "/apps/dota2/images/dota_react/heroes/dark_willow.png?",
+    "imgHD": "https://i.imgur.com/3Sjx5K1.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/dark_willow.png?",
     "base_health": 200,
     "base_health_regen": 0.75,
@@ -7910,6 +10682,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Nuker", "Disabler", "Durable", "Escape", "Initiator"],
     "img": "/apps/dota2/images/dota_react/heroes/pangolier.png?",
+    "imgHD": "https://i.imgur.com/uAUyeBB.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/pangolier.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -8179,6 +10952,7 @@
     "attack_type": "Melee",
     "roles": ["Carry", "Initiator", "Disabler", "Durable"],
     "img": "/apps/dota2/images/dota_react/heroes/mars.png?",
+    "imgHD": "https://i.imgur.com/3jcHqzV.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/mars.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -8286,6 +11060,7 @@
     "attack_type": "Melee",
     "roles": ["Support", "Carry", "Initiator", "Disabler", "Escape"],
     "img": "/apps/dota2/images/dota_react/heroes/marci.png?",
+    "imgHD": "https://i.imgur.com/WCTNuRF.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/marci.png?",
     "base_health": 200,
     "base_health_regen": 0.25,
@@ -8339,6 +11114,7 @@
     "attack_type": "Melee",
     "roles": ["Initiator", "Durable", "Disabler"],
     "img": "/apps/dota2/images/dota_react/heroes/primal_beast.png?",
+    "imgHD": "https://i.imgur.com/720gJgH.jpg",
     "icon": "/apps/dota2/images/dota_react/heroes/icons/primal_beast.png?",
     "base_health": 200,
     "base_health_regen": 0,
