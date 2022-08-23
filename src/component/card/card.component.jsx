@@ -1,41 +1,41 @@
 import './card.style.scss';
+import CARRY from '../../assets/svg/noun-sword-1432646.svg';
+import NUKE from '../../assets/svg/noun-nuclear-5103661.svg';
+import SUPPORT from '../../assets/svg/noun-hand-plus-4815869.svg';
+import ESCAPE from '../../assets/svg/noun-escape-3814717.svg';
+import INITIATOR from '../../assets/svg/noun-lightning-1241238.svg';
+import DISABLER from '../../assets/svg/noun-disable-3883326.svg';
+import DURABLE from '../../assets/svg/noun-shield-5101162.svg';
+import JUNGLER from '../../assets/svg/noun-plant-257552.svg';
+import PUSHER from '../../assets/svg/noun-skill-sword-attack-2360258.svg';
 
 export const Card = (props) => {
   const { heroes, imgUrl } = props;
-  const { img, imgHD, localized_name, name, roles } = heroes;
+  const { imgHD, localized_name, roles, abilities } = heroes;
 
   const icons = (role) => {
     switch (role) {
       case 'Carry':
-        return 'https://www.svgrepo.com/show/337576/muscle.svg';
-        break;
+        return CARRY;
       case 'Escape':
-        return 'https://www.svgrepo.com/show/105378/sword.svg';
-        break;
+        return ESCAPE;
       case 'Nuker':
-        return 'https://www.svgrepo.com/show/197910/radiation-nuclear.svg';
-        break;
+        return NUKE;
       case 'Initiator':
-        return 'https://www.svgrepo.com/show/105378/sword.svg';
-        break;
+        return INITIATOR;
       case 'Durable':
-        return 'https://www.svgrepo.com/show/105378/sword.svg';
-        break;
+        return DURABLE;
       case 'Disabler':
-        return 'https://www.svgrepo.com/show/105378/sword.svg';
-        break;
+        return DISABLER;
       case 'Jungler':
-        return 'https://www.svgrepo.com/show/105378/sword.svg';
-        break;
+        return JUNGLER;
       case 'Support':
-        return 'https://www.svgrepo.com/show/105378/sword.svg';
-        break;
+        return SUPPORT;
       case 'Pusher':
-        return 'https://www.svgrepo.com/show/105378/sword.svg';
-        break;
+        return PUSHER;
 
       default:
-        break;
+        return role;
     }
   };
 
@@ -50,16 +50,15 @@ export const Card = (props) => {
       <div className='card-content'>
         <p className='flex'>
           {roles.map((role) => {
-            return <img className='icon' src={icons(role)} alt={role}></img>;
+            return <img className='icon' src={icons(role)} alt={role} title={role}></img>;
           })}
         </p>
         <h2 className='card-title'>{localized_name}</h2>
         <p>Stats</p>
         <div className='skill-row'>
-          <img className='card-skill' src={`${imgUrl}${img}`} alt={name} />
-          <img className='card-skill' src={`${imgUrl}${img}`} alt={name} />
-          <img className='card-skill' src={`${imgUrl}${img}`} alt={name} />
-          <img className='card-skill' src={`${imgUrl}${img}`} alt={name} />
+          {abilities.map(({ dname, desc, img }, index) => {
+            return <img key={index} className='card-skill' src={`${imgUrl}${img}`} alt={dname} title={desc} />;
+          })}
         </div>
       </div>
     </div>

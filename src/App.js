@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './App.css';
+import './App.scss';
 import dataHeroes from './heroes.json';
 import abilitiesHeroes from './abilities.json';
 import { Card } from './component/card/card.component';
@@ -17,7 +17,6 @@ function App() {
   return (
     <div className='App'>
       <h1>Heroes</h1>
-      {/* <Card heroes={heroes[1]} imgUrl={url} /> */}
       <div className='grid'>
         {heroes.map((hero) => {
           return <Card key={hero.id} heroes={hero} imgUrl={url} />;
