@@ -1,0 +1,21 @@
+$full-bleed: rgb(151, 3, 3);
+
+.navbar {
+  background-color: $full-bleed;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+    li {
+      color: #f2f2f2;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.full-bleed {
+  box-shadow: 0 0 0 100vmax $full-bleed;
+  clip-path: inset(0 -100vmax);
+}

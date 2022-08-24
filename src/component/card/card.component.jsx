@@ -8,6 +8,7 @@ import DISABLER from '../../assets/svg/noun-disable-3883326.svg';
 import DURABLE from '../../assets/svg/noun-shield-5101162.svg';
 import JUNGLER from '../../assets/svg/noun-plant-257552.svg';
 import PUSHER from '../../assets/svg/noun-skill-sword-attack-2360258.svg';
+import { Icon } from '../icon/icon.component';
 
 export const Card = (props) => {
   const { heroes, imgUrl } = props;
@@ -49,15 +50,14 @@ export const Card = (props) => {
     <div className='card' style={divStyle}>
       <div className='card-content'>
         <p className='flex'>
-          {roles.map((role) => {
-            return <img className='icon' src={icons(role)} alt={role} title={role}></img>;
+          {roles.map((role, index) => {
+            return <img key={index} className='icon' src={icons(role)} alt={role} title={role}></img>;
           })}
         </p>
         <h2 className='card-title'>{localized_name}</h2>
-        <p>Stats</p>
         <div className='skill-row'>
-          {abilities.map(({ dname, desc, img }, index) => {
-            return <img key={index} className='card-skill' src={`${imgUrl}${img}`} alt={dname} title={desc} />;
+          {abilities.map((ability, index) => {
+            return <Icon key={index} ability={ability} imgUrl={imgUrl} className='card-skill' />;
           })}
         </div>
       </div>

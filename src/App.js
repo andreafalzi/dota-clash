@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import './App.scss';
 import dataHeroes from './heroes.json';
 import abilitiesHeroes from './abilities.json';
-import { Card } from './component/card/card.component';
+import { Navigation } from './component/navigation/navigation.components';
+import { Heroes } from './component/routes/heroes/heroes.component';
+import { Abilities } from './component/routes/abilities/abilities.component';
 
 function App() {
   const [heroes, setHeroes] = useState([]);
@@ -16,24 +18,9 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Heroes</h1>
-      <div className='grid'>
-        {heroes.map((hero) => {
-          return <Card key={hero.id} heroes={hero} imgUrl={url} />;
-        })}
-      </div>
-      <h1>Abilities</h1>
-      <div className='grid'>
-        {abilities.map(({ dname, desc, img }, index) => {
-          return (
-            <div key={index}>
-              <h2>{dname}</h2>
-              <img src={`${url}${img}`} alt={dname} />
-              <p>{desc}</p>
-            </div>
-          );
-        })}
-      </div>
+      <Navigation />
+      <Heroes className='grid' heroes={heroes} url={url} />
+      <Abilities className='grid' abilities={abilities} url={url} />
     </div>
   );
 }
