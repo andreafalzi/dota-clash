@@ -9,8 +9,19 @@ $full-bleed: rgb(151, 3, 3);
 
     li {
       color: #f2f2f2;
-      font-size: 2rem;
+      font-size: 1.5rem;
       text-transform: uppercase;
+      cursor: pointer;
+      padding-block: 1rem;
+      padding-inline: 1rem;
+      transition-timing-function: ease-in;
+      transition-property: background-color;
+      transition-duration: 200ms;
+
+      &:is(:focus, :hover) {
+        color: $full-bleed;
+        background-color: #f2f2f2;
+      }
     }
   }
 }
