@@ -5,7 +5,18 @@ import { Card } from '../../component/card/card.component';
 import { FilterBox } from '../../component/filter_box/filter_box.component';
 
 export const Heroes = ({ heroes, url, className }) => {
-  const roleArr = ['carry', 'escape', 'nuker', 'initiator', 'durable', 'disabler', 'jungler', 'support', 'pusher'];
+  const selectRoleOptions = [
+    { value: '', text: '' },
+    { value: 'Carry', text: 'Carry' },
+    { value: 'Escape', text: 'Escape' },
+    { value: 'Nuker', text: 'Nuker' },
+    { value: 'Initiator', text: 'Initiator' },
+    { value: 'Durable', text: 'Durable' },
+    { value: 'Disabler', text: 'Disabler' },
+    { value: 'Jungler', text: 'Jungler' },
+    { value: 'Support', text: 'Support' },
+    { value: 'Pusher', text: 'Pusher' },
+  ];
 
   const selectAttributeOptions = [
     { value: '', text: '' },
@@ -14,46 +25,63 @@ export const Heroes = ({ heroes, url, className }) => {
     { value: 'int', text: 'Intellect' },
   ];
 
-  const [searchInput, setSearchInput] = useState('');
-  const [searchResult, setSearchResult] = useState([]);
-  const [searchRole, setSearchRole] = useState('');
-  const [searchAttribute, setSearchAttribute] = useState(selectAttributeOptions[0].value);
-
-  //Search Attribute Functionality
-  const handleSearchAttribute = (event) => {
-    // setSearchInput('');
-    setSearchAttribute(event.target.value);
+  const defaultSearchFields = {
+    attribute: '',
+    role: '',
+    search: '',
   };
 
-  useEffect(() => {
-    const resultsAttribute = heroes.filter((hero) => hero.primary_attr.toLowerCase().includes(searchAttribute));
-    setSearchResult(resultsAttribute);
-  }, [searchAttribute, heroes]);
+  const [searchFields, setSearchFields] = useState(defaultSearchFields);
+  const [searchResult, setSearchResult] = useState([]);
 
-  //Search Role Functionality (not finished)
-  const handleSearchRole = (event) => setSearchRole(event.target.value);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-  useEffect(() => {
-    const resultsRole = heroes.filter((hero) => hero.roles.filter((role) => role.toLowerCase().includes(searchRole)));
-    setSearchResult(resultsRole);
-  }, [searchRole, heroes]);
+    switch (name) {
+      case 'attribute':
+        setSearchFields({ attribute: value, role: '', search: '' });
+        break;
+      case 'role':
+        setSearchFields({ attribute: '', role: value, search: '' });
+        break;
+      case 'search':
+        setSearchFields({ attribute: '', role: '', search: value });
+        break;
+
+      default:
+        break;
+    }
+  };
 
   //Search Form Functionality
-  const handleSearch = (event) => {
-    setSearchInput(event.target.value);
-    setSearchAttribute('');
-  };
 
   useEffect(() => {
-    const resultsName = heroes.filter((hero) => hero.localized_name.toLowerCase().includes(searchInput.toLowerCase()));
-    setSearchResult(resultsName);
-  }, [searchInput, heroes]);
+    const results = heroes.filter((hero) => hero.localized_name.toLowerCase().includes(searchFields.search.toLowerCase()));
+    setSearchResult(results);
+    console.log('searchResult:', results);
+  }, [searchFields.search, heroes]);
+
+  //Search Attribute Functionality
+
+  useEffect(() => {
+    const results = heroes.filter((hero) => hero.primary_attr.includes(searchFields.attribute));
+    setSearchResult(results);
+    console.log('attributeResult:', results);
+  }, [searchFields.attribute, heroes]);
+  //Search Role Functionality
+  useEffect(() => {
+    const results = heroes.filter((hero) => hero.roles.includes(searchFields.role));
+    setSearchResult(results);
+    console.log('roleResult:', results);
+  }, [searchFields.role, heroes]);
+
+  console.log('stateResult:', searchResult);
 
   return (
     <>
       <h1>Heroes</h1>
       <div className='flex-container'>
-        <FilterBox handle={{ handleSearch, handleSearchRole, handleSearchAttribute }} search={{ searchInput, searchRole, searchAttribute }} roleArr={roleArr} selectAttributeOptions={selectAttributeOptions} />
+        <FilterBox handle={{ handleChange }} search={{ searchFields }} selectOptions={{ selectAttributeOptions, selectRoleOptions }} />
         <div className={className}>
           {searchResult.map((hero, index) => {
             return <Card key={index} heroes={hero} imgUrl={url} />;
