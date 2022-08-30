@@ -16,7 +16,7 @@ function App() {
   const url = 'https://cdn.cloudflare.steamstatic.com/';
 
   useEffect(() => {
-    setHeroes(dataHeroes);
+    setHeroes(dataHeroes.sort((a, b) => (a.localized_name > b.localized_name ? 1 : -1)));
     setAbilities(abilitiesHeroes);
   }, []);
 
