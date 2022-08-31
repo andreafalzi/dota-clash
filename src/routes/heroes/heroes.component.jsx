@@ -32,7 +32,7 @@ export const Heroes = ({ heroes, url, className }) => {
   };
 
   const [searchFields, setSearchFields] = useState(defaultSearchFields);
-  const [searchResult, setSearchResult] = useState([]);
+  const [searchResult, setSearchResult] = useState(heroes);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -61,6 +61,13 @@ export const Heroes = ({ heroes, url, className }) => {
     console.log('searchResult:', results);
   }, [searchFields.search, heroes]);
 
+  //Search Role Functionality
+  useEffect(() => {
+    const results = heroes.filter((hero) => hero.roles.includes(searchFields.role));
+    setSearchResult(results);
+    console.log('roleResult:', results);
+  }, [searchFields.role, heroes]);
+
   //Search Attribute Functionality
 
   useEffect(() => {
@@ -68,12 +75,6 @@ export const Heroes = ({ heroes, url, className }) => {
     setSearchResult(results);
     console.log('attributeResult:', results);
   }, [searchFields.attribute, heroes]);
-  //Search Role Functionality
-  useEffect(() => {
-    const results = heroes.filter((hero) => hero.roles.includes(searchFields.role));
-    setSearchResult(results);
-    console.log('roleResult:', results);
-  }, [searchFields.role, heroes]);
 
   console.log('stateResult:', searchResult);
 
