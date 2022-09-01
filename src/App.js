@@ -4,7 +4,7 @@ import dataHeroes from './heroes.json';
 import abilitiesHeroes from './abilities.json';
 import BACKGROUND from './assets/wallpaperflare.com_wallpaper.jpg';
 import { Navigation } from './component/navigation/navigation.components';
-import { Heroes } from './routes/heroes/heroes.component-old';
+import { Heroes } from './routes/heroes/heroes.component';
 import { Abilities } from './routes/abilities/abilities.component';
 import { Home } from './routes/home/home.component';
 import { DotaClash } from './routes/dota_clash/dota_clash.component';

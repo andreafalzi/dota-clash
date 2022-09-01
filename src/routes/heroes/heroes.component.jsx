@@ -1,68 +1,112 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import './heroes.style.scss';
 import { Card } from '../../component/card/card.component';
-// import { FilterBox } from '../../component/filter_box/filter_box.component';
+import { FilterBox } from '../../component/filter_box/filter_box.component';
 
 export const Heroes = ({ heroes, url, className }) => {
-  // the value of the search field
-  const [name, setName] = useState('');
+  const selectRoleOptions = [
+    { value: '', text: 'All' },
+    { value: 'Carry', text: 'Carry' },
+    { value: 'Escape', text: 'Escape' },
+    { value: 'Nuker', text: 'Nuker' },
+    { value: 'Initiator', text: 'Initiator' },
+    { value: 'Durable', text: 'Durable' },
+    { value: 'Disabler', text: 'Disabler' },
+    { value: 'Jungler', text: 'Jungler' },
+    { value: 'Support', text: 'Support' },
+    { value: 'Pusher', text: 'Pusher' },
+  ];
 
-  // the search result
-  const [foundUsers, setFoundUsers] = useState(heroes);
+  const selectAttributeOptions = [
+    { value: '', text: 'All' },
+    { value: 'str', text: 'Strength' },
+    { value: 'agi', text: 'Agility' },
+    { value: 'int', text: 'Intellect' },
+  ];
 
-  const filter = (e) => {
-    const keyword = e.target.value;
-
-    if (keyword !== '') {
-      const results = heroes.filter((user) => {
-        return user.localized_name.toLowerCase().includes(keyword.toLowerCase());
-        // Use the toLowerCase() method to make it case-insensitive
-      });
-      setFoundUsers(results);
-    } else {
-      setFoundUsers(heroes);
-      // If the text field is empty, show all users
-    }
-
-    setName(keyword);
+  const defaultSearchFields = {
+    attribute: '',
+    role: '',
+    search: '',
   };
 
-  const filterAttribute = (e) => {
-    const keyword = e.target.value;
+  const [filteredList, setFilteredList] = useState(heroes);
+  // const [selectedAttribute, setSelectedAttribute] = useState('');
+  // const [selectedRole, setSelectedRole] = useState('');
+  // const [search, setSearch] = useState('');
+  const [searchFields, setSearchFields] = useState(defaultSearchFields);
 
-    if (keyword !== 'All') {
-      const results = heroes.filter((user) => {
-        return user.primary_attr.toLowerCase().includes(keyword.toLowerCase());
-        // Use the toLowerCase() method to make it case-insensitive
-      });
-      setFoundUsers(results);
-    } else {
-      setFoundUsers(heroes);
-      // If the text field is empty, show all users
-    }
+  // // Update search state
+  // const handleSearchChange = (event) => {
+  //   setSearch(event.target.value);
+  // };
+
+  // // Update selectedAttribute state
+  // const handleAttributeChange = (event) => {
+  //   setSelectedAttribute(event.target.value);
+  // };
+
+  // // Update selectedRole state
+  // const handleRoleChange = (event) => {
+  //   setSelectedRole(event.target.value);
+  // };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setSearchFields({ ...searchFields, [name]: value });
   };
+
+  useEffect(() => {
+    const filterBySearch = (filteredList) => {
+      // Avoid filter for empty string
+      if (!searchFields.search) {
+        return filteredList;
+      }
+      const filteredHeroes = filteredList.filter((item) => item.localized_name.toLowerCase().includes(searchFields.search.toLowerCase()));
+      return filteredHeroes;
+    };
+
+    const filterSelectedAttribute = (filteredList) => {
+      // Avoid filter for empty string
+      if (!searchFields.attribute) {
+        return filteredList;
+      }
+      const filteredHeroes = filteredList.filter((item) => item.primary_attr.includes(searchFields.attribute));
+      return filteredHeroes;
+    };
+
+    const filterSelectedRole = (filteredList) => {
+      // Avoid filter for empty string
+      if (!searchFields.role) {
+        return filteredList;
+      }
+      const filteredHeroes = filteredList.filter((item) => item.roles.includes(searchFields.role));
+      return filteredHeroes;
+    };
+
+    var filteredList = filterSelectedAttribute(heroes);
+    filteredList = filterSelectedRole(filteredList);
+    filteredList = filterBySearch(filteredList);
+    setFilteredList(filteredList);
+  }, [searchFields.attribute, searchFields.role, searchFields.search, heroes]);
 
   return (
-    <div className='flex-container'>
-      <div className='filter-box-container'>
-        <label htmlFor='search-form'>
-          <input type='search' name='search' id='search-form' className='search-input' placeholder='Search for...' value={name} onChange={filter} />
-        </label>
-
-        <select onChange={filterAttribute} name='attribute' className='custom-select' aria-label='Filter Hereos By Attributes'>
-          <option value='All'>Filter By Attributes</option>
-          <option value='str'>Strength</option>
-          <option value='agi'>Agility</option>
-          <option value='int'>Intellect</option>
-        </select>
+    <>
+      <h1>Heroes</h1>
+      <div className='flex-container'>
+        <FilterBox handle={handleChange} value={searchFields} selectOptions={{ selectAttributeOptions, selectRoleOptions }} />
+        <div className={className}>
+          {filteredList.length > 0 ? (
+            filteredList.map((hero, index) => {
+              return <Card key={index} heroes={hero} imgUrl={url} />;
+            })
+          ) : (
+            <h3 style={{ color: 'white' }}>No result found</h3>
+          )}
+        </div>
       </div>
-
-      <div className={className}>
-        {foundUsers.map((hero, index) => {
-          return <Card key={index} heroes={hero} imgUrl={url} />;
-        })}
-      </div>
-    </div>
+    </>
   );
 };
