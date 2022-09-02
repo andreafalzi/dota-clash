@@ -8,13 +8,13 @@ import DISABLER from '../../assets/svg/noun-disable-3883326.svg';
 import DURABLE from '../../assets/svg/noun-shield-5101162.svg';
 import JUNGLER from '../../assets/svg/noun-plant-257552.svg';
 import PUSHER from '../../assets/svg/noun-skill-sword-attack-2360258.svg';
-import { Icon } from '../icon/icon.component';
+import { SkillIcon } from '../skill_icon/skill_icon.component';
 
 export const Card = (props) => {
   const { heroes, imgUrl } = props;
   const { imgHD, localized_name, roles, abilities } = heroes;
 
-  const icons = (role) => {
+  const iconsRole = (role) => {
     switch (role) {
       case 'Carry':
         return CARRY;
@@ -51,13 +51,13 @@ export const Card = (props) => {
       <div className='card-content'>
         <p className='flex'>
           {roles.map((role, index) => {
-            return <img key={index} className='icon' src={icons(role)} alt={role} title={role}></img>;
+            return <img key={index} className='icon' src={iconsRole(role)} alt={role} title={role}></img>;
           })}
         </p>
         <h2 className='card-title'>{localized_name}</h2>
         <div className='skill-row'>
           {abilities.map((ability, index) => {
-            return <Icon key={index} ability={ability} imgUrl={imgUrl} className='card-skill' />;
+            return <SkillIcon key={index} ability={ability} imgUrl={imgUrl} className='card-skill' />;
           })}
         </div>
       </div>
