@@ -1,3 +1,7 @@
+.grid {
+  align-items: flex-start;
+}
+
 h1 {
   text-align: center;
   padding-block: 2rem;
@@ -7,4 +11,33 @@ h1 {
 
 .ability-card {
   color: #f2f2f2;
+  background-color: rgb(44, 44, 44);
+  border-radius: 5px;
+  border: solid #f2f2f2 1px;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+
+  h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .content {
+    display: flex;
+    gap: 1rem;
+
+    img {
+      height: 100px;
+      width: 100px;
+    }
+
+    .inside-content {
+      p:nth-child(2) {
+        margin-top: 1rem;
+      }
+      .strong {
+        font-weight: 700;
+      }
+    }
+  }
 }
