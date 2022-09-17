@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import './heroes.style.scss';
 import { Card } from '../../component/card/card.component';
-import { FilterBox } from '../../component/filter_box/filter_box.component';
+import { SearchBox } from '../../component/search_box/search_box.component';
+import { SelectBox } from '../../component/select_box/select_box.component';
 
 export const Heroes = ({ heroes, url, className }) => {
   const selectRoleOptions = [
@@ -78,7 +79,18 @@ export const Heroes = ({ heroes, url, className }) => {
     <>
       <h1>Heroes</h1>
       <div className='flex-container'>
-        <FilterBox handle={handleChange} value={searchFields} selectOptions={{ selectAttributeOptions, selectRoleOptions }} />
+        <div className='filter-box-container'>
+          {/* INPUT SEARCH */}
+          <SearchBox labelName='search' type='search' name='search' onChange={handleChange} value={searchFields.search}>
+            Search
+          </SearchBox>
+          {/* ATTRIBUTE SELECTOR */}
+          <label htmlFor='attribute'>Attribute</label>
+          <SelectBox options={selectAttributeOptions} name='attribute' onChange={handleChange} value={searchFields.attribute} />
+          {/* ROLE SELECTOR */}
+          <label htmlFor='role'>Role</label>
+          <SelectBox options={selectRoleOptions} name='role' onChange={handleChange} value={searchFields.role} />
+        </div>
         <div className={className}>
           {filteredList.length > 0 ? (
             filteredList.map((hero, index) => {

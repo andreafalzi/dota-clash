@@ -212,7 +212,7 @@ export const NewBuild = () => {
           <div className='container_item_box'>
             {earlyArr.map(({ id, value }) => {
               return (
-                <div className={`item_box green ${value.length ? 'show':''}`} key={id}>
+                <div className='item_box green' key={id}>
                   <span>{value}</span>
                   <MdDelete onClick={() => removeValue(id, 'early')} />
                 </div>
