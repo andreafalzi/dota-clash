@@ -1,3 +1,4 @@
+import { SearchBox } from '../search_box/search_box.component';
 import './filter_box.style.scss';
 
 export const FilterBox = (props) => {
@@ -8,8 +9,9 @@ export const FilterBox = (props) => {
   return (
     <div className='filter-box-container'>
       {/* INPUT SEARCH */}
-      <label htmlFor='search'>Search</label>
-      <input type='search' name='search' onChange={handle} value={search} />
+      <SearchBox labelName='search' type='search' name='search' onChange={handle} value={search}>
+        Search
+      </SearchBox>
       {/* ATTRIBUTE SELECTOR */}
       <label htmlFor='attribute'>Attribute</label>
       <select name='attribute' onChange={handle} value={attribute}>

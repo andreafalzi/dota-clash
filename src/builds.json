@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "Markus build",
+    "hero": "Abaddon",
+    "items": {
+      "early": ["Tango", "Stout Shield"],
+      "mid": ["Tranquil Boots", "Ultimate Orb"],
+      "late": ["Aghanim's Scepter"],
+      "optional": ["Vanguard", "Veil of Discord"]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Markus build",
+    "hero": "Abaddon",
+    "items": {
+      "early": ["Tango", "Stout Shield"],
+      "mid": ["Tranquil Boots", "Ultimate Orb"],
+      "late": ["Aghanim's Scepter"],
+      "optional": ["Vanguard", "Veil of Discord"]
+    }
+  }
+]

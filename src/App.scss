@@ -1,19 +1,8 @@
-.App {
-  min-height: 100vh;
-  position: relative;
-  isolation: isolate;
+a {
+  text-decoration: none;
+  color: #f2f2f2;
+}
 
-  &::before {
-    content: '';
-    background-color: rgba(43, 43, 43, 0.836);
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-  }
-}
-.container {
-  margin-inline: 10%;
-}
 .grid {
   display: flex;
   flex-direction: column;

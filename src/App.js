@@ -1,42 +1,48 @@
 import { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+
 import './App.scss';
 import dataHeroes from './heroes.json';
 import abilitiesHeroes from './abilities.json';
-import BACKGROUND from './assets/wallpaperflare.com_wallpaper.jpg';
-import { Navigation } from './component/navigation/navigation.components';
+import itemsHeroes from './items.json';
+
 import { Heroes } from './routes/heroes/heroes.component';
 import { Abilities } from './routes/abilities/abilities.component';
 import { Home } from './routes/home/home.component';
-import { DotaClash } from './routes/dota_clash/dota_clash.component';
+import { Builds } from './routes/builds/builds.component';
+import { NewBuild } from './routes/newBuild/newBuild.component';
+import { Build } from './routes/build/build.component';
+import { Items } from './routes/items/items.component';
+import { Layout } from './routes/layout/layout.component';
+import { BuildProvider } from './context/build.context';
 
 function App() {
   const [heroes, setHeroes] = useState([]);
   const [abilities, setAbilities] = useState([]);
-  const [currentTab, setCurrentTab] = useState('Home');
+  const [items, setItems] = useState([]);
+
   const url = 'https://cdn.cloudflare.steamstatic.com/';
 
   useEffect(() => {
     setHeroes(dataHeroes.sort((a, b) => (a.localized_name > b.localized_name ? 1 : -1)));
     setAbilities(abilitiesHeroes);
+    setItems(itemsHeroes);
   }, []);
 
-  const divStyle = {
-    backgroundImage: `url(${BACKGROUND})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
-  };
-
   return (
-    <div className='App' style={divStyle}>
-      <div className='container'>
-        <Navigation setCurrentTab={setCurrentTab} />
-        {currentTab === 'Home' && <Home />}
-        {currentTab === 'Heroes' && <Heroes className='grid' heroes={heroes} url={url} />}
-        {currentTab === 'Abilities' && <Abilities className='grid' abilities={abilities} url={url} />}
-        {currentTab === 'Dota Clash' && <DotaClash />}
-      </div>
-    </div>
+    <BuildProvider>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='heroes' element={<Heroes className='grid' heroes={heroes} url={url} />} />
+          <Route path='abilities' element={<Abilities className='grid' abilities={abilities} url={url} />} />
+          <Route path='items' element={<Items className='grid' items={items} url={url} />} />
+          <Route path='builds' element={<Builds className='grid' items={items} url={url} />} />
+          <Route path='builds/:buildId' element={<Build />} />
+          <Route path='builds/new' element={<NewBuild />} />
+        </Route>
+      </Routes>
+    </BuildProvider>
   );
 }
 

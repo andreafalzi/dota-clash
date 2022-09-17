@@ -2,7 +2,7 @@
   align-items: flex-start;
 }
 
-.abilities_container {
+.items_container {
   margin-top: 2rem;
 }
 
@@ -13,7 +13,7 @@ h1 {
   text-transform: uppercase;
 }
 
-.ability-card {
+.item-card {
   color: #f2f2f2;
   background-color: rgb(44, 44, 44);
   border-radius: 5px;
@@ -27,11 +27,8 @@ h1 {
   }
 
   .content {
-    display: flex;
-    gap: 1rem;
-
     img {
-      height: 100px;
+      height: 65px;
       width: 100px;
     }
 

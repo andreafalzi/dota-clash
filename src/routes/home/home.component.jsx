@@ -1,10 +1,25 @@
+import { Link } from 'react-router-dom';
+
 import './home.style.scss';
 
 export const Home = () => {
   return (
-    <>
+    <div>
       <h1>Welcome in Dota Fan Site</h1>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel accusamus quidem incidunt exercitationem. Laborum animi possimus, fugit deleniti perferendis consequuntur dolorem odio accusamus amet esse a ad dicta quisquam beatae minus tempore ea fugiat et voluptatum. Vel velit corporis cupiditate error at! Consequatur unde quam, non iste hic obcaecati. Est!</p>
-    </>
+      <div className='home_link_container'>
+        <Link className='home_link' to='heroes'>
+          Heroes
+        </Link>
+        <Link className='home_link' to='abilities'>
+          Abilities
+        </Link>
+        <Link className='home_link' to='items'>
+          Items
+        </Link>
+        <Link className='home_link' to='builds'>
+          Builds
+        </Link>
+      </div>
+    </div>
   );
 };

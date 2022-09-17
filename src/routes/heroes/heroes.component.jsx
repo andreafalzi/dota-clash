@@ -32,25 +32,7 @@ export const Heroes = ({ heroes, url, className }) => {
   };
 
   const [filteredList, setFilteredList] = useState(heroes);
-  // const [selectedAttribute, setSelectedAttribute] = useState('');
-  // const [selectedRole, setSelectedRole] = useState('');
-  // const [search, setSearch] = useState('');
   const [searchFields, setSearchFields] = useState(defaultSearchFields);
-
-  // // Update search state
-  // const handleSearchChange = (event) => {
-  //   setSearch(event.target.value);
-  // };
-
-  // // Update selectedAttribute state
-  // const handleAttributeChange = (event) => {
-  //   setSelectedAttribute(event.target.value);
-  // };
-
-  // // Update selectedRole state
-  // const handleRoleChange = (event) => {
-  //   setSelectedRole(event.target.value);
-  // };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
