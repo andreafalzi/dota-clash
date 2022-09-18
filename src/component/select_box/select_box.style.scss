@@ -1,0 +1,15 @@
+$sub-color: grey;
+$main-color: #333;
+
+.select_input {
+  background: none;
+  background-color: white;
+  color: $main-color;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  border-bottom: 1px solid $sub-color;
+}

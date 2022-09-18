@@ -6,7 +6,7 @@ import { BuildContext } from '../../context/build.context';
 import { MdDelete } from 'react-icons/md';
 import './builds.style.scss';
 
-export const Builds = ({ items, url, className }) => {
+export const Builds = ({ className }) => {
   const [builds, setBuilds] = useContext(BuildContext);
 
   function handleRemove(id) {

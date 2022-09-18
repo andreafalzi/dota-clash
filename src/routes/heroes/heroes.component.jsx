@@ -7,23 +7,23 @@ import { SelectBox } from '../../component/select_box/select_box.component';
 
 export const Heroes = ({ heroes, url, className }) => {
   const selectRoleOptions = [
-    { value: '', text: 'All' },
-    { value: 'Carry', text: 'Carry' },
-    { value: 'Escape', text: 'Escape' },
-    { value: 'Nuker', text: 'Nuker' },
-    { value: 'Initiator', text: 'Initiator' },
-    { value: 'Durable', text: 'Durable' },
-    { value: 'Disabler', text: 'Disabler' },
-    { value: 'Jungler', text: 'Jungler' },
-    { value: 'Support', text: 'Support' },
-    { value: 'Pusher', text: 'Pusher' },
+    { id: 1, value: '', text: 'All' },
+    { id: 2, value: 'Carry', text: 'Carry' },
+    { id: 3, value: 'Escape', text: 'Escape' },
+    { id: 4, value: 'Nuker', text: 'Nuker' },
+    { id: 5, value: 'Initiator', text: 'Initiator' },
+    { id: 6, value: 'Durable', text: 'Durable' },
+    { id: 7, value: 'Disabler', text: 'Disabler' },
+    { id: 8, value: 'Jungler', text: 'Jungler' },
+    { id: 9, value: 'Support', text: 'Support' },
+    { id: 10, value: 'Pusher', text: 'Pusher' },
   ];
 
   const selectAttributeOptions = [
-    { value: '', text: 'All' },
-    { value: 'str', text: 'Strength' },
-    { value: 'agi', text: 'Agility' },
-    { value: 'int', text: 'Intellect' },
+    { id: 1, value: '', text: 'All' },
+    { id: 2, value: 'str', text: 'Strength' },
+    { id: 3, value: 'agi', text: 'Agility' },
+    { id: 4, value: 'int', text: 'Intellect' },
   ];
 
   const defaultSearchFields = {
@@ -85,11 +85,13 @@ export const Heroes = ({ heroes, url, className }) => {
             Search
           </SearchBox>
           {/* ATTRIBUTE SELECTOR */}
-          <label htmlFor='attribute'>Attribute</label>
-          <SelectBox options={selectAttributeOptions} name='attribute' onChange={handleChange} value={searchFields.attribute} />
+          <SelectBox options={selectAttributeOptions} name='attribute' onChange={handleChange} value={searchFields.attribute}>
+            Attribute
+          </SelectBox>
           {/* ROLE SELECTOR */}
-          <label htmlFor='role'>Role</label>
-          <SelectBox options={selectRoleOptions} name='role' onChange={handleChange} value={searchFields.role} />
+          <SelectBox options={selectRoleOptions} name='role' onChange={handleChange} value={searchFields.role}>
+            Role
+          </SelectBox>
         </div>
         <div className={className}>
           {filteredList.length > 0 ? (

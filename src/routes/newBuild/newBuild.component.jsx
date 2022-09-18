@@ -1,19 +1,27 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../component/button/button.component';
-import { FormInput } from '../../component/form_input/form_input.component';
 
 import { BuildContext } from '../../context/build.context';
+import { ItemsContext } from '../../context/items.context';
 
 import { MdDownloadDone, MdDelete } from 'react-icons/md';
 import { v4 as uuid } from 'uuid';
 import './newBuild.style.scss';
+import { SelectBox } from '../../component/select_box/select_box.component';
+import { SearchBox } from '../../component/search_box/search_box.component';
 
 export const NewBuild = () => {
   const [builds, setBuilds] = useContext(BuildContext);
+  const [itemsStates] = useContext(ItemsContext);
   let navigate = useNavigate();
   const unique_id = uuid();
   const small_id = unique_id.slice(0, 4);
+
+  const filteredItemsStateOnlyName = [{ id: small_id, value: '', text: 'Select your item' }];
+  itemsStates.forEach((item) => {
+    filteredItemsStateOnlyName.push({ id: item.id, value: item.dname, text: item.dname });
+  });
 
   const defaultForm = {
     name: '',
@@ -140,19 +148,19 @@ export const NewBuild = () => {
         <form className='form_new_build' onSubmit={handleBuildSubmit}>
           <h3>Builder</h3>
           <div className='form_new_build_section'>
-            <FormInput labelName='name' type='text' required onChange={handleChange} name='name' value={name}>
+            <SearchBox labelName='name' type='text' name='name' onChange={handleChange} value={name}>
               Build Name
-            </FormInput>
+            </SearchBox>
           </div>
           <div className='form_new_build_section'>
-            <FormInput labelName='hero' type='text' required onChange={handleChange} name='hero' value={hero}>
+            <SearchBox labelName='hero' type='text' name='hero' onChange={handleChange} value={hero}>
               Choose your hero
-            </FormInput>
+            </SearchBox>
           </div>
           <div className='form_new_build_section'>
-            <FormInput labelName='early' type='text' onChange={handleChange} name='early' value={early}>
+            <SelectBox type='text' options={filteredItemsStateOnlyName} onChange={handleChange} name='early'>
               Choose early game items
-            </FormInput>
+            </SelectBox>
             <div className='buttons_group'>
               <Button type='button' onClick={addValue} name='early' value={early}>
                 <MdDownloadDone />
@@ -160,9 +168,9 @@ export const NewBuild = () => {
             </div>
           </div>
           <div className='form_new_build_section'>
-            <FormInput labelName='mid' type='text' onChange={handleChange} name='mid' value={mid}>
+            <SelectBox type='text' options={filteredItemsStateOnlyName} onChange={handleChange} name='mid'>
               Choose mid game items
-            </FormInput>
+            </SelectBox>
             <div className='buttons_group'>
               <Button type='button' onClick={addValue} name='mid' value={mid}>
                 <MdDownloadDone />
@@ -170,9 +178,9 @@ export const NewBuild = () => {
             </div>
           </div>
           <div className='form_new_build_section'>
-            <FormInput labelName='late' type='text' onChange={handleChange} name='late' value={late}>
+            <SelectBox type='text' options={filteredItemsStateOnlyName} onChange={handleChange} name='late'>
               Choose late game items
-            </FormInput>
+            </SelectBox>
             <div className='buttons_group'>
               <Button type='button' onClick={addValue} name='late' value={late}>
                 <MdDownloadDone />
@@ -180,9 +188,9 @@ export const NewBuild = () => {
             </div>
           </div>
           <div className='form_new_build_section'>
-            <FormInput labelName='optional' type='text' onChange={handleChange} name='optional' value={optional}>
+            <SelectBox type='text' options={filteredItemsStateOnlyName} onChange={handleChange} name='optional'>
               Choose optional items
-            </FormInput>
+            </SelectBox>
             <div className='buttons_group'>
               <Button type='button' onClick={addValue} name='optional' value={optional}>
                 <MdDownloadDone />

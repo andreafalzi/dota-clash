@@ -45,40 +45,43 @@ export const Abilities = ({ abilities, url, className }) => {
   return (
     <>
       <h1>Abilities</h1>
-      <SearchBox labelName='search' type='search' name='search' onChange={handleChange} value={search}>
-        Search
-      </SearchBox>
-      <div className={`${className} abilities_container`}>
-        {filteredList.map(({ dname, desc, img, mc, cd }, index) => {
-          return (
-            <div key={index} className='ability-card'>
-              <h2>{dname}</h2>
-              <div className='content'>
-                <img src={`${url}${img}`} alt={dname} />
-                <div className='inside-content'>
-                  <p>{desc}</p>
-                  {!mc.includes('0') && (
-                    <p className='strong'>
-                      Mana:
-                      {mc.map((e, index) => (
-                        <span key={index}> {e}</span>
-                      ))}
-                    </p>
-                  )}
-
-                  {!cd.includes('0') && (
-                    <p className='strong'>
-                      Cooldown:
-                      {cd.map((e, index) => (
-                        <span key={index}> {e}</span>
-                      ))}
-                    </p>
-                  )}
+      <div className='flex-container'>
+        <div className='filter-box-container'>
+          <SearchBox labelName='search' type='search' name='search' onChange={handleChange} value={search}>
+            Search
+          </SearchBox>
+        </div>
+        <div className={`${className}`}>
+          {filteredList.map(({ dname, desc, img, mc, cd }, index) => {
+            return (
+              <div key={index} className='ability-card'>
+                <h2>{dname}</h2>
+                <div className='content'>
+                  <img src={`${url}${img}`} alt={dname} />
+                  <div className='inside-content'>
+                    <p>{desc}</p>
+                    {!mc.includes('0') && (
+                      <p className='strong'>
+                        Mana:
+                        {mc.map((e, index) => (
+                          <span key={index}> {e}</span>
+                        ))}
+                      </p>
+                    )}
+                    {!cd.includes('0') && (
+                      <p className='strong'>
+                        Cooldown:
+                        {cd.map((e, index) => (
+                          <span key={index}> {e}</span>
+                        ))}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </>
   );
