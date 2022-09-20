@@ -37,7 +37,7 @@ function App() {
             <Route path='abilities' element={<Abilities className='grid' abilities={abilities} url={url} />} />
             <Route path='items' element={<Items className='grid' url={url} />} />
             <Route path='builds' element={<Builds className='grid' url={url} />} />
-            <Route path='builds/:buildId' element={<Build />} />
+            <Route path='builds/:id' element={<Build />} />
             <Route path='builds/new' element={<NewBuild />} />
           </Route>
         </Routes>

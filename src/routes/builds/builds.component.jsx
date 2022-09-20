@@ -1,18 +1,23 @@
 import { useContext } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { Button } from '../../component/button/button.component';
 import { BuildContext } from '../../context/build.context';
 
-import { MdDelete } from 'react-icons/md';
+import { MdDelete, MdSettings } from 'react-icons/md';
 import './builds.style.scss';
 
 export const Builds = ({ className }) => {
   const [builds, setBuilds] = useContext(BuildContext);
+  let navigate = useNavigate();
 
   function handleRemove(id) {
     const newList = builds.filter((item) => item.id !== id);
 
     setBuilds(newList);
+  }
+
+  function handleEdit(id) {
+    navigate(`/builds/${id}`);
   }
 
   return (
@@ -25,7 +30,10 @@ export const Builds = ({ className }) => {
         {builds.map((build) => {
           return (
             <div key={build.id} className='build_container'>
-              <MdDelete onClick={() => handleRemove(build.id)} />
+              <div className='icons_group'>
+                <MdSettings onClick={() => handleEdit(build.id)} />
+                <MdDelete onClick={() => handleRemove(build.id)} />
+              </div>
               <h5>{build.name}</h5>
               <h3>
                 Hero: <span>{build.hero}</span>

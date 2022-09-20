@@ -3,5 +3,5 @@ import './build.style.scss';
 
 export const Build = () => {
   let params = useParams();
-  return <h1>Build {params.buildId}</h1>;
+  return <h1>Build {params.id}</h1>;
 };
