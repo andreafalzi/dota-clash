@@ -4,8 +4,9 @@ import { Button } from '../../component/button/button.component';
 
 import { BuildContext } from '../../context/build.context';
 import { ItemsContext } from '../../context/items.context';
+import { HeroesContext } from '../../context/heroes.context';
 
-import { MdDownloadDone, MdDelete } from 'react-icons/md';
+import { MdExposurePlus1, MdDelete } from 'react-icons/md';
 import { v4 as uuid } from 'uuid';
 import './newBuild.style.scss';
 import { SelectBox } from '../../component/select_box/select_box.component';
@@ -14,6 +15,7 @@ import { SearchBox } from '../../component/search_box/search_box.component';
 export const NewBuild = () => {
   const [builds, setBuilds] = useContext(BuildContext);
   const [itemsStates] = useContext(ItemsContext);
+  const [heroesStates] = useContext(HeroesContext);
   let navigate = useNavigate();
   const unique_id = uuid();
   const small_id = unique_id.slice(0, 4);
@@ -23,8 +25,16 @@ export const NewBuild = () => {
     filteredItemsStateOnlyName.push({ id: item.id, value: item.dname, text: item.dname });
   });
 
+  const filteredHeroesStateOnlyName = [];
+  heroesStates.forEach((hero) => {
+    filteredHeroesStateOnlyName.push({ id: hero.id, value: hero.localized_name, text: hero.localized_name });
+  });
+
   const defaultForm = {
     name: '',
+  };
+
+  const defaultSelection = {
     hero: '',
     early: '',
     mid: '',
@@ -58,11 +68,18 @@ export const NewBuild = () => {
   const [midArr, setMidArr] = useState([]);
   const [lateArr, setLateArr] = useState([]);
   const [optionalArr, setOptionalArr] = useState([]);
+  const [selected, setSelected] = useState(defaultSelection);
 
-  const handleChange = (event) => {
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
+
+  //   setFormFields({ ...formFields, [name]: value });
+  // };
+  const handleSelected = (event) => {
     const { name, value } = event.target;
 
     setFormFields({ ...formFields, [name]: value });
+    setSelected({ ...selected, [name]: value });
   };
 
   const addValue = (event) => {
@@ -127,6 +144,7 @@ export const NewBuild = () => {
   const resetDefault = (event) => {
     event.preventDefault();
     setFormFields(defaultForm);
+    setSelected(defaultSelection);
     setEarlyArr([]);
     setMidArr([]);
     setLateArr([]);
@@ -140,7 +158,8 @@ export const NewBuild = () => {
     navigate('/builds');
   };
 
-  const { name, hero, early, mid, late, optional } = formFields;
+  const { name } = formFields;
+  const { hero, early, mid, late, optional } = selected;
   return (
     <>
       <h1>New Build</h1>
@@ -151,52 +170,52 @@ export const NewBuild = () => {
         <div className='form_new_build'>
           <h3>Builder</h3>
           <div className='form_new_build_section'>
-            <SearchBox labelName='name' type='text' name='name' onChange={handleChange} value={name}>
+            <SearchBox labelName='name' type='text' name='name' onChange={handleSelected} value={name}>
               Build Name
             </SearchBox>
           </div>
           <div className='form_new_build_section'>
-            <SearchBox labelName='hero' type='text' name='hero' onChange={handleChange} value={hero}>
+            <SelectBox type='text' emptyOption={true} emptyOptionText='Select your Hero' options={filteredHeroesStateOnlyName} name='hero' onChange={handleSelected} value={hero}>
               Choose your hero
-            </SearchBox>
+            </SelectBox>
           </div>
           <div className='form_new_build_section'>
-            <SelectBox type='text' emptyOption={true} options={filteredItemsStateOnlyName} onChange={handleChange} name='early'>
-              Choose early game items
+            <SelectBox type='text' emptyOption={true} emptyOptionText='Select your Item' options={filteredItemsStateOnlyName} name='early' onChange={handleSelected} value={early}>
+              Choose early game items (multiple choices)
             </SelectBox>
             <div className='single_button'>
               <Button type='button' onClick={addValue} name='early' value={early}>
-                <MdDownloadDone />
+                <MdExposurePlus1 />
               </Button>
             </div>
           </div>
           <div className='form_new_build_section'>
-            <SelectBox type='text' emptyOption={true} options={filteredItemsStateOnlyName} onChange={handleChange} name='mid'>
-              Choose mid game items
+            <SelectBox type='text' emptyOption={true} emptyOptionText='Select your Item' options={filteredItemsStateOnlyName} name='mid' onChange={handleSelected} value={mid}>
+              Choose mid game items (multiple choices)
             </SelectBox>
             <div className='single_button'>
               <Button type='button' onClick={addValue} name='mid' value={mid}>
-                <MdDownloadDone />
+                <MdExposurePlus1 />
               </Button>
             </div>
           </div>
           <div className='form_new_build_section'>
-            <SelectBox type='text' emptyOption={true} options={filteredItemsStateOnlyName} onChange={handleChange} name='late'>
-              Choose late game items
+            <SelectBox type='text' emptyOption={true} emptyOptionText='Select your Item' options={filteredItemsStateOnlyName} name='late' onChange={handleSelected} value={late}>
+              Choose late game items (multiple choices)
             </SelectBox>
             <div className='single_button'>
               <Button type='button' onClick={addValue} name='late' value={late}>
-                <MdDownloadDone />
+                <MdExposurePlus1 />
               </Button>
             </div>
           </div>
           <div className='form_new_build_section'>
-            <SelectBox type='text' emptyOption={true} options={filteredItemsStateOnlyName} onChange={handleChange} name='optional'>
-              Choose optional items
+            <SelectBox type='text' emptyOption={true} emptyOptionText='Select your Item' options={filteredItemsStateOnlyName} onChange={handleSelected} value={optional} name='optional'>
+              Choose optional items (multiple choices)
             </SelectBox>
             <div className='single_button'>
               <Button type='button' onClick={addValue} name='optional' value={optional}>
-                <MdDownloadDone />
+                <MdExposurePlus1 />
               </Button>
             </div>
           </div>

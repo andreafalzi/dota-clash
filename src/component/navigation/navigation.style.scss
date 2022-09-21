@@ -4,7 +4,7 @@ $full-bleed: rgb(151, 3, 3);
   background-color: $full-bleed;
   ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style: none;
 
     .nav_link {

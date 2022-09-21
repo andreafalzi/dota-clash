@@ -3,7 +3,7 @@ import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { Button } from '../../component/button/button.component';
 import { BuildContext } from '../../context/build.context';
 
-import { MdDelete, MdSettings } from 'react-icons/md';
+import { MdDelete, MdOutlineRemoveRedEye } from 'react-icons/md';
 import './builds.style.scss';
 
 export const Builds = ({ className }) => {
@@ -31,14 +31,14 @@ export const Builds = ({ className }) => {
           return (
             <div key={build.id} className='build_container'>
               <div className='icons_group'>
-                <MdSettings onClick={() => handleEdit(build.id)} />
+                <MdOutlineRemoveRedEye onClick={() => handleEdit(build.id)} />
                 <MdDelete onClick={() => handleRemove(build.id)} />
               </div>
               <h5>{build.name}</h5>
               <h3>
                 Hero: <span>{build.hero}</span>
               </h3>
-              {build.items.early.length !== 0 ? <h3>Early Game:</h3> : null}
+              {/* {build.items.early.length !== 0 ? <h3>Early Game:</h3> : null}
               <ul>
                 {build.items.early.map((item) => (
                   <li key={item.id}>{item.value}</li>
@@ -61,7 +61,7 @@ export const Builds = ({ className }) => {
                 {build.items.optional.map((item) => (
                   <li key={item.id}>{item.value}</li>
                 ))}
-              </ul>
+              </ul> */}
             </div>
           );
         })}

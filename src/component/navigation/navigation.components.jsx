@@ -3,7 +3,7 @@ import './navigation.style.scss';
 
 export const Navigation = () => {
   return (
-    <nav className='navbar full-bleed'>
+    <nav className='navbar full-bleed container'>
       <ul>
         <Link className='nav_link' to='/'>
           Home

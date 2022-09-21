@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 
 import './heroes.style.scss';
 import { Card } from '../../component/card/card.component';
 import { SearchBox } from '../../component/search_box/search_box.component';
 import { SelectBox } from '../../component/select_box/select_box.component';
+import { HeroesContext } from '../../context/heroes.context';
 
-export const Heroes = ({ heroes, url, className }) => {
+export const Heroes = ({ url, className }) => {
+  const [heroesState] = useContext(HeroesContext);
   const selectRoleOptions = [
     { id: 1, value: '', text: 'All' },
     { id: 2, value: 'Carry', text: 'Carry' },
@@ -32,7 +34,7 @@ export const Heroes = ({ heroes, url, className }) => {
     search: '',
   };
 
-  const [filteredList, setFilteredList] = useState(heroes);
+  const [filteredList, setFilteredList] = useState(heroesState);
   const [searchFields, setSearchFields] = useState(defaultSearchFields);
 
   const handleChange = (event) => {
@@ -69,11 +71,11 @@ export const Heroes = ({ heroes, url, className }) => {
       return filteredHeroes;
     };
 
-    var filteredList = filterSelectedAttribute(heroes);
+    var filteredList = filterSelectedAttribute(heroesState);
     filteredList = filterSelectedRole(filteredList);
     filteredList = filterBySearch(filteredList);
     setFilteredList(filteredList);
-  }, [searchFields.attribute, searchFields.role, searchFields.search, heroes]);
+  }, [searchFields.attribute, searchFields.role, searchFields.search, heroesState]);
 
   return (
     <>
@@ -86,11 +88,11 @@ export const Heroes = ({ heroes, url, className }) => {
           </SearchBox>
           {/* ATTRIBUTE SELECTOR */}
           <SelectBox options={selectAttributeOptions} name='attribute' onChange={handleChange} value={searchFields.attribute}>
-            Attribute
+            Filter by Attribute
           </SelectBox>
           {/* ROLE SELECTOR */}
           <SelectBox options={selectRoleOptions} name='role' onChange={handleChange} value={searchFields.role}>
-            Role
+            Filter by Role
           </SelectBox>
         </div>
         <div className={className}>
