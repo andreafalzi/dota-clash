@@ -1,6 +1,8 @@
 $full-bleed: rgb(151, 3, 3);
+$MochiyFont: 'Mochiy Pop One', sans-serif;
 
 .navbar {
+  font-family: $MochiyFont;
   background-color: $full-bleed;
   ul {
     display: flex;

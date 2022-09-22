@@ -1,3 +1,30 @@
+$MochiyFont: 'Mochiy Pop One', sans-serif;
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(126, 126, 126) #494949;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #494949;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(126, 126, 126);
+  // border-radius: 20px;
+  // border: 3px solid #333;
+}
+
+h1 {
+  font-family: $MochiyFont;
+}
+
 a {
   text-decoration: none;
   color: #f2f2f2;

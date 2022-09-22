@@ -4,7 +4,7 @@ import './home.style.scss';
 
 export const Home = () => {
   return (
-    <div>
+    <div className='home_section'>
       <h1>Welcome in Dota Wiki</h1>
       <div className='home_link_container'>
         <Link className='home_link' to='heroes'>

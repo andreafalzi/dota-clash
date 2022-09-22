@@ -1,3 +1,9 @@
+$MochiyFont: 'Mochiy Pop One', sans-serif;
+
+.home_section {
+  font-family: $MochiyFont;
+}
+
 .home_link_container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
