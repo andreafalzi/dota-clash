@@ -11,7 +11,7 @@ import { Builds } from './routes/builds/builds.component';
 import { NewBuild } from './routes/newBuild/newBuild.component';
 import { Build } from './routes/build/build.component';
 import { Items } from './routes/items/items.component';
-import { Layout } from './routes/layout/layout.component';
+import Layout from './routes/layout/layout.component';
 import { BuildProvider } from './context/build.context';
 import { ItemsProvider } from './context/items.context';
 import { HeroesProvider } from './context/heroes.context';

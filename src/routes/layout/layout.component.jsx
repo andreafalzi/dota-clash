@@ -3,7 +3,7 @@ import { Navigation } from '../../component/navigation/navigation.components';
 import BACKGROUND from '../../assets/wallpaperflare.com_wallpaper.jpg';
 import './layout.style.scss';
 
-export function Layout() {
+function Layout() {
   const divStyle = {
     backgroundImage: `url(${BACKGROUND})`,
     backgroundSize: 'cover',
@@ -19,3 +19,5 @@ export function Layout() {
     </div>
   );
 }
+
+export default Layout;
