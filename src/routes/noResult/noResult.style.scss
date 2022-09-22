@@ -1,0 +1,33 @@
+.no_result_container {
+  display: grid;
+  place-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100vh;
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: '';
+    background-color: rgba(43, 43, 43, 0.836);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  a {
+    border: 1px solid #f2f2f2;
+    border-radius: 10px;
+    width: fit-content;
+    padding-block: 1rem;
+    padding-inline: 2rem;
+    font-weight: 500;
+    background-color: #333;
+    transition: all 300ms ease;
+
+    &:is(:hover, :focus) {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+  }
+}

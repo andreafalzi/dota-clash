@@ -15,6 +15,7 @@ import { Layout } from './routes/layout/layout.component';
 import { BuildProvider } from './context/build.context';
 import { ItemsProvider } from './context/items.context';
 import { HeroesProvider } from './context/heroes.context';
+import NoResult from './routes/noResult/noResult.component';
 
 function App() {
   const [abilities, setAbilities] = useState([]);
@@ -39,6 +40,7 @@ function App() {
               <Route path='builds/:id' element={<Build />} />
               <Route path='builds/new' element={<NewBuild />} />
             </Route>
+            <Route path='*' element={<NoResult />} />
           </Routes>
         </ItemsProvider>
       </HeroesProvider>
