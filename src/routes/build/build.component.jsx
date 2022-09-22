@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import './build.style.scss';
 import { BuildContext } from '../../context/build.context';
 import { Button } from '../../component/button/button.component';
+import NoResult from '../noResult/noResult.component';
 
 export const Build = () => {
   const [builds] = useContext(BuildContext);
@@ -10,7 +11,7 @@ export const Build = () => {
 
   const singleBuild = builds.find((build) => build.id === params.id);
 
-  return (
+  return singleBuild ? (
     <>
       <h1>{singleBuild.name}</h1>
       <Link to='/builds'>
@@ -69,5 +70,7 @@ export const Build = () => {
         </div>
       </div>
     </>
+  ) : (
+    <NoResult />
   );
 };
