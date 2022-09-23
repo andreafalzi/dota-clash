@@ -1,73 +1,23 @@
-# Check the Web App @ this link
+# Dota Wiki
+This is a React App project built using the "Thinking in React" principles.  The app is a Wikipedia for a popular game called "Dota2", where you can check Heroes, abilities and items that are inside the game.
+The concepts that I have developed in this projects can be easily extended to other web app such e-commerce, online-markets, commercial websites, real estate ecc...
+
+## Data
+All the data that are shown are pulled out from files JSON. All data are fetched using useEffect hook.
+
+## Heroes -> Search and Filters
+If you navigate to the Heroes section you will noticed that you have the possibility to Search and Filter all the Heroes list, to make it easier for the user to find the data that's looking for. This idea is the same concepts as Amazon or Ebay, where you can filter your research many times to find what you want.
+
+## Builds -> Customization
+In this section you will find various custom builds that others have created. Here you have the possibility to delete or inspect them. At the top left there is a button that will take you to the creation page, where you can make your own custom build. In the build section you can add or remove items and when you have it ready you can save it and find it listed together with the other builds.
+Also here the idea can be applied on many other cases for exemple a Bike Builder, Car Builder ecc...
+
+## How is it build
+The project is build using CRA.
+I used functional components and hooks such useState, useEffect and useContext.
+The CSS is build up using SCSS.
+I used React-Router to implement the routing between pages.
+uuidv4 to generate unique Ids.
+
+### Check the Web App @ this link
 https://dotawiki.andreafalzi.dev/
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
