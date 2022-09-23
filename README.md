@@ -1,4 +1,4 @@
-# Check the Web App following this link
+# Check the Web App @ this link
 https://dotawiki.andreafalzi.dev/
 
 # Getting Started with Create React App
