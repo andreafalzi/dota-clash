@@ -1,5 +1,6 @@
 $full-bleed: rgb(151, 3, 3);
 $MochiyFont: 'Mochiy Pop One', sans-serif;
+$navHeight: 50px;
 
 nav {
   font-family: $MochiyFont;
@@ -10,7 +11,7 @@ nav {
   z-index: 20;
 
   .nav_bar {
-    height: 50px;
+    height: $navHeight;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -25,8 +26,9 @@ nav {
     .nav-menu {
       margin-left: auto;
       color: #f2f2f2;
-      font-size: 2rem;
       cursor: pointer;
+      display: flex;
+      scale: 3;
 
       @media screen and (min-width: 900px) {
         display: none;
@@ -35,10 +37,10 @@ nav {
     ul.ul_menu {
       position: absolute;
       background-color: $full-bleed;
-      top: 50px;
+      top: $navHeight;
       right: 0;
       width: 100vw;
-      height: calc(100vh - 50px);
+      height: calc(100vh - $navHeight);
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -51,7 +53,6 @@ nav {
       flex-direction: column;
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-      justify-content: space-around;
       list-style: none;
       -webkit-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
