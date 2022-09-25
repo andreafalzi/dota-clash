@@ -12,6 +12,8 @@ $MochiyFont: 'Mochiy Pop One', sans-serif;
   @media screen and (min-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
     margin-top: 2rem;
+    max-width: 900px;
+    margin-inline: auto;
   }
 }
 
