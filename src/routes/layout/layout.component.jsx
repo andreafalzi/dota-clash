@@ -13,7 +13,7 @@ function Layout() {
   return (
     <div style={divStyle} className='layout'>
       <Navigation />
-      <div className='container'>
+      <div className='container outlet_section'>
         <Outlet />
       </div>
     </div>

@@ -171,7 +171,7 @@ export const NewBuild = () => {
           <h3>Builder</h3>
           <div className='form_new_build_section'>
             <SearchBox labelName='name' type='text' name='name' onChange={handleSelected} value={name}>
-              Build Name
+              Name
             </SearchBox>
           </div>
           <div className='form_new_build_section'>
@@ -224,7 +224,7 @@ export const NewBuild = () => {
         <div className='form_new_build'>
           <h3>Preview</h3>
           <h4>
-            Build Name: <span>{name}</span>
+            Name: <span>{name}</span>
           </h4>
           <h4>
             Hero: <span>{hero}</span>

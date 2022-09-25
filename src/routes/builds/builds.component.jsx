@@ -6,7 +6,7 @@ import { BuildContext } from '../../context/build.context';
 import { MdDelete, MdOutlineRemoveRedEye } from 'react-icons/md';
 import './builds.style.scss';
 
-export const Builds = ({ className }) => {
+export const Builds = () => {
   const [builds, setBuilds] = useContext(BuildContext);
   let navigate = useNavigate();
 
@@ -21,12 +21,12 @@ export const Builds = ({ className }) => {
   }
 
   return (
-    <div className='clash-container'>
+    <>
       <h1>Builds</h1>
       <Link to='new'>
         <Button>Create Build</Button>
       </Link>
-      <div className={`${className} builds_container`}>
+      <div className='builds_grid'>
         {builds.map((build) => {
           return (
             <div key={build.id} className='build_container'>
@@ -67,6 +67,6 @@ export const Builds = ({ className }) => {
         })}
       </div>
       <Outlet />
-    </div>
+    </>
   );
 };

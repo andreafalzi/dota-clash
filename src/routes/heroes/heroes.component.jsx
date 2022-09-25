@@ -6,7 +6,7 @@ import { SearchBox } from '../../component/search_box/search_box.component';
 import { SelectBox } from '../../component/select_box/select_box.component';
 import { HeroesContext } from '../../context/heroes.context';
 
-export const Heroes = ({ url, className }) => {
+export const Heroes = ({ url }) => {
   const [heroesState] = useContext(HeroesContext);
   const selectRoleOptions = [
     { id: 1, value: '', text: 'All' },
@@ -95,7 +95,7 @@ export const Heroes = ({ url, className }) => {
             Filter by Role
           </SelectBox>
         </div>
-        <div className={className}>
+        <div className='heroes_grid'>
           {filteredList.length > 0 ? (
             filteredList.map((hero, index) => {
               return <Card key={index} heroes={hero} imgUrl={url} />;

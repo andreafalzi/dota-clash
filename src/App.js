@@ -33,10 +33,10 @@ function App() {
           <Routes>
             <Route path='/' element={<Layout />}>
               <Route index element={<Home />} />
-              <Route path='heroes' element={<Heroes className='grid' url={url} />} />
-              <Route path='abilities' element={<Abilities className='grid' abilities={abilities} url={url} />} />
-              <Route path='items' element={<Items className='grid' url={url} />} />
-              <Route path='builds' element={<Builds className='grid' url={url} />} />
+              <Route path='heroes' element={<Heroes url={url} />} />
+              <Route path='abilities' element={<Abilities abilities={abilities} url={url} />} />
+              <Route path='items' element={<Items url={url} />} />
+              <Route path='builds' element={<Builds url={url} />} />
               <Route path='builds/:id' element={<Build />} />
               <Route path='builds/new' element={<NewBuild />} />
             </Route>

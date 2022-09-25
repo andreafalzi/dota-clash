@@ -4,6 +4,7 @@ $shrink-color: #f2f2f2;
 
 @mixin shrinkLabel {
   top: -16px;
+  left: 5px;
   font-size: 12px;
   font-weight: 500;
   color: $shrink-color;
@@ -44,9 +45,13 @@ $shrink-color: #f2f2f2;
     font-weight: normal;
     position: absolute;
     pointer-events: none;
-    left: 5px;
+    left: 25px;
     top: 10px;
     transition: 300ms ease all;
+
+    @media screen and (min-width: 900px) {
+      left: 5px;
+    }
 
     &.shrink {
       @include shrinkLabel();

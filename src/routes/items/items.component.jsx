@@ -5,7 +5,7 @@ import { ItemsContext } from '../../context/items.context';
 
 import './items.style.scss';
 
-export const Items = ({ items, url, className }) => {
+export const Items = ({ url }) => {
   const [itemsState] = useContext(ItemsContext);
   const [filteredList, setFilteredList] = useState(itemsState);
   const [search, setSearch] = useState('');
@@ -29,17 +29,17 @@ export const Items = ({ items, url, className }) => {
             Search
           </SearchBox>
         </div>
-        <div className={`${className} items_container`}>
+        <div className='items_grid'>
           {filteredList.map((m, index) => {
             return (
               <div className='item-card' key={index}>
-                <h2>{m.dname}</h2>
-                <div className='content'>
+                <div className='title'>
                   <img src={`${url}${m.img}`} alt={m.dname} />
-                  <div className='inside-content'>
-                    <p>{m.hint}</p>
-                    <p className='strong'>Cost: {m.cost}</p>
-                  </div>
+                  <h2>{m.dname}</h2>
+                </div>
+                <div className='inside-content'>
+                  <p>{m.hint}</p>
+                  <p className='strong'>Cost: {m.cost}</p>
                 </div>
               </div>
             );

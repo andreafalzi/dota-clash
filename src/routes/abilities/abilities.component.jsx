@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { SearchBox } from '../../component/search_box/search_box.component';
 import './abilities.style.scss';
 
-export const Abilities = ({ abilities, url, className }) => {
+export const Abilities = ({ abilities, url }) => {
   const [abilitiesState, setAbilitiesState] = useState([]);
   const [filteredList, setFilteredList] = useState(abilitiesState);
   const [search, setSearch] = useState('');
@@ -51,32 +51,32 @@ export const Abilities = ({ abilities, url, className }) => {
             Search
           </SearchBox>
         </div>
-        <div className={`${className}`}>
+        <div className='abilities_grid'>
           {filteredList.map(({ dname, desc, img, mc, cd }, index) => {
             return (
               <div key={index} className='ability-card'>
-                <h2>{dname}</h2>
-                <div className='content'>
+                <div className='title'>
                   <img src={`${url}${img}`} alt={dname} />
-                  <div className='inside-content'>
-                    <p>{desc}</p>
-                    {!mc.includes('0') && (
-                      <p className='strong'>
-                        Mana:
-                        {mc.map((e, index) => (
-                          <span key={index}> {e}</span>
-                        ))}
-                      </p>
-                    )}
-                    {!cd.includes('0') && (
-                      <p className='strong'>
-                        Cooldown:
-                        {cd.map((e, index) => (
-                          <span key={index}> {e}</span>
-                        ))}
-                      </p>
-                    )}
-                  </div>
+                  <h2>{dname}</h2>
+                </div>
+                <div className='inside-content'>
+                  <p>{desc}</p>
+                  {!mc.includes('0') && (
+                    <p className='strong'>
+                      Mana:
+                      {mc.map((e, index) => (
+                        <span key={index}>{e}</span>
+                      ))}
+                    </p>
+                  )}
+                  {!cd.includes('0') && (
+                    <p className='strong'>
+                      Cooldown:
+                      {cd.map((e, index) => (
+                        <span key={index}>{e}s</span>
+                      ))}
+                    </p>
+                  )}
                 </div>
               </div>
             );

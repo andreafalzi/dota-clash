@@ -13,4 +13,17 @@
 }
 .container {
   margin-inline: 10%;
+
+  @media screen and (min-width: 1700px) {
+    margin-inline: auto;
+    max-width: 1600px;
+  }
+}
+
+.outlet_section {
+  padding-block: 3rem;
+
+  @media screen and (min-width: 900px) {
+    padding-block: 5rem;
+  }
 }
