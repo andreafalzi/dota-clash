@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 import { MdMenu } from 'react-icons/md';
 import './navigation.style.scss';
 import { useState } from 'react';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    isOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset');
-  }, [isOpen]);
+  // useEffect(() => {
+  //   isOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset');
+  // }, [isOpen]);
 
   return (
     <nav>
