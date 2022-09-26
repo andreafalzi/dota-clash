@@ -153,9 +153,13 @@ export const NewBuild = () => {
 
   const handleBuildSubmit = (event) => {
     event.preventDefault();
-    fillSubmitForm(submitForm);
-    setBuilds([...builds, submitForm]);
-    navigate('/builds');
+    if (formFields.name === '' || selected.hero === '') {
+      alert('Name and Hero cannot be empty');
+    } else {
+      fillSubmitForm(submitForm);
+      setBuilds([...builds, submitForm]);
+      navigate('/builds');
+    }
   };
 
   const { name } = formFields;
@@ -277,7 +281,7 @@ export const NewBuild = () => {
             })}
           </div>
           <div className='buttons_group'>
-            <Button type='submit' onClick={handleBuildSubmit} disabled={name === '' || hero === '' ? 'disabled' : ''}>
+            <Button type='submit' onClick={handleBuildSubmit}>
               Save
             </Button>
             <Button type='button' onClick={resetDefault}>
