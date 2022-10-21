@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
+import { motion } from 'framer-motion';
 
 import './heroes.style.scss';
 import { Card } from '../../component/card/card.component';
@@ -72,13 +73,24 @@ export const Heroes = ({ url }) => {
     };
 
     var filteredList = filterSelectedAttribute(heroesState);
-    filteredList = filterSelectedRole(filteredList);
-    filteredList = filterBySearch(filteredList);
-    setFilteredList(filteredList);
+    // filteredList = filterSelectedRole(filteredList);
+    // filteredList = filterBySearch(filteredList);
+    // setFilteredList(filteredList);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
+
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+      filteredList = filterSelectedRole(filteredList);
+      filteredList = filterBySearch(filteredList);
+      setFilteredList(filteredList);
+    }, 500);
   }, [searchFields.attribute, searchFields.role, searchFields.search, heroesState]);
 
+  //framer motion state
+  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+
   return (
-    <>
+    <div className='container'>
       <h1>Heroes</h1>
       <div className='flex-container'>
         <div className='filter-box-container'>
@@ -95,7 +107,7 @@ export const Heroes = ({ url }) => {
             Filter by Role
           </SelectBox>
         </div>
-        <div className='heroes_grid'>
+        <motion.div animate={animateCard} transition={{ duration: 0.5, delayChildren: 0.5 }} className='heroes_grid'>
           {filteredList.length > 0 ? (
             filteredList.map((hero, index) => {
               return <Card key={index} heroes={hero} imgUrl={url} />;
@@ -103,8 +115,8 @@ export const Heroes = ({ url }) => {
           ) : (
             <h3 style={{ color: 'white' }}>No result found</h3>
           )}
-        </div>
+        </motion.div>
       </div>
-    </>
+    </div>
   );
 };

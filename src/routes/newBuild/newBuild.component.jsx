@@ -165,7 +165,7 @@ export const NewBuild = () => {
   const { name } = formFields;
   const { hero, early, mid, late, optional } = selected;
   return (
-    <>
+    <div className='container'>
       <h1>New Build</h1>
       <Link to='/builds'>
         <Button>Back to Builds</Button>
@@ -290,6 +290,6 @@ export const NewBuild = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

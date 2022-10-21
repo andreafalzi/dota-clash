@@ -1,10 +1,10 @@
 import './noResult.style.scss';
-import BACKGROUND from '../../assets/wallpaperflare.com_wallpaper.jpg';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../../component/button/button.component';
 
+const BACKGROUND = '/assets/appBG.jpg';
 const NoResult = () => {
   const divStyle = {
     backgroundImage: `url(${BACKGROUND})`,

@@ -12,7 +12,7 @@ export const Build = () => {
   const singleBuild = builds.find((build) => build.id === params.id);
 
   return singleBuild ? (
-    <>
+    <div className='container'>
       <h1>{singleBuild.name}</h1>
       <Link to='/builds'>
         <Button>Back to Builds</Button>
@@ -69,7 +69,7 @@ export const Build = () => {
           })}
         </div>
       </div>
-    </>
+    </div>
   ) : (
     <NoResult />
   );

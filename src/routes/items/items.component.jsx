@@ -21,7 +21,7 @@ export const Items = ({ url }) => {
   }, [search, itemsState]);
 
   return (
-    <>
+    <div className='container'>
       <h1>Items</h1>
       <div className='flex-container'>
         <div className='filter-box-container'>
@@ -30,22 +30,26 @@ export const Items = ({ url }) => {
           </SearchBox>
         </div>
         <div className='items_grid'>
-          {filteredList.map((m, index) => {
-            return (
-              <div className='item-card' key={index}>
-                <div className='title'>
-                  <img src={`${url}${m.img}`} alt={m.dname} />
-                  <h2>{m.dname}</h2>
+          {filteredList.length > 0 ? (
+            filteredList.map((m, index) => {
+              return (
+                <div className='item-card' key={index}>
+                  <div className='title'>
+                    <img src={`${url}${m.img}`} alt={m.dname} />
+                    <h2>{m.dname}</h2>
+                  </div>
+                  <div className='inside-content'>
+                    <p>{m.hint}</p>
+                    <p className='strong'>Cost: {m.cost}</p>
+                  </div>
                 </div>
-                <div className='inside-content'>
-                  <p>{m.hint}</p>
-                  <p className='strong'>Cost: {m.cost}</p>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })
+          ) : (
+            <h3 style={{ color: 'white' }}>No result found</h3>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 };

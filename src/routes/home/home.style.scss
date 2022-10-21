@@ -1,7 +1,29 @@
 $MochiyFont: 'Mochiy Pop One', sans-serif;
+$RobotoFont: 'Roboto Mono', sans-serif;
 
 .home_section {
   font-family: $MochiyFont;
+}
+
+.home-hero {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    color: #f2f2f2;
+    font-family: $RobotoFont;
+    line-height: 23px;
+
+    @media screen and (min-width: 900px) {
+      margin-top: 2rem;
+      width: 70ch;
+      line-height: 33px;
+      font-size: 1.2rem;
+    }
+  }
 }
 
 .home_link_container {
@@ -67,5 +89,158 @@ p > em {
 
   @media screen and (min-width: 900px) {
     font-size: 1rem;
+  }
+}
+
+.home-bg-links {
+  margin-block: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media screen and (min-width: 900px) {
+    margin-block: 5rem;
+  }
+}
+.home-bg-link {
+  width: 100%;
+  height: 30vh;
+  padding-block: 3rem;
+  background-size: cover;
+  filter: drop-shadow(20px 10px 20px black);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+
+  &:hover .first-animation,
+  &:hover .second-animation {
+    animation-name: in;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+  }
+
+  &:hover .second-animation {
+    animation-delay: 50ms;
+  }
+  &:hover .first-animation-reverse,
+  &:hover .second-animation-reverse {
+    animation-name: in-reverse;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+  }
+
+  &:hover .second-animation-reverse {
+    animation-delay: 50ms;
+  }
+
+  .first-animation {
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 25% 100%, 50% 50%, 25% 0);
+    background-color: #f2f2f279;
+    filter: blur(25px);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30%;
+    translate: -100vw;
+    animation-name: out;
+    animation-duration: 1000ms;
+  }
+
+  .second-animation {
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 60% 100%, 85% 50%, 60% 0);
+    background-color: #f2f2f279;
+    filter: blur(25px);
+    position: absolute;
+    top: 0;
+    right: 16%;
+    height: 100%;
+    width: 30%;
+    translate: -100vw;
+    animation-name: out;
+    animation-duration: 1000ms;
+  }
+
+  .first-animation-reverse {
+    clip-path: polygon(25% 0, 0 50%, 25% 100%, 75% 100%, 50% 50%, 75% 0);
+    background-color: #f2f2f279;
+    filter: blur(25px);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30%;
+    translate: 100vw;
+    animation-name: out-reverse;
+    animation-duration: 1000ms;
+  }
+
+  .second-animation-reverse {
+    clip-path: polygon(25% 0, 0 50%, 25% 100%, 40% 100%, 15% 50%, 40% 0);
+    background-color: #f2f2f279;
+    filter: blur(25px);
+    position: absolute;
+    top: 0;
+    left: 16%;
+    height: 100%;
+    width: 30%;
+    translate: 100vw;
+    animation-name: out-reverse;
+    animation-duration: 1000ms;
+  }
+
+  &:nth-child(even) {
+    align-items: flex-end;
+  }
+
+  &:nth-child(odd) {
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  p {
+    font-size: clamp(2rem, 5vw, 4rem);
+    filter: drop-shadow(5px 5px 3px black);
+  }
+
+  @media screen and (min-width: 900px) {
+    height: 60vh;
+    padding-block: 5rem;
+  }
+}
+
+@keyframes in {
+  from {
+    translate: -100vw;
+  }
+  to {
+    translate: 0vw;
+  }
+}
+
+@keyframes out {
+  from {
+    translate: 0vw;
+  }
+  to {
+    translate: 100vw;
+  }
+}
+
+@keyframes in-reverse {
+  from {
+    translate: 100vw;
+  }
+  to {
+    translate: 0vw;
+  }
+}
+
+@keyframes out-reverse {
+  from {
+    translate: 0vw;
+  }
+  to {
+    translate: -100vw;
   }
 }

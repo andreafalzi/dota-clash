@@ -1,14 +1,15 @@
 import './card.style.scss';
-import CARRY from '../../assets/svg/noun-sword-1432646.svg';
-import NUKE from '../../assets/svg/noun-nuclear-5103661.svg';
-import SUPPORT from '../../assets/svg/noun-hand-plus-4815869.svg';
-import ESCAPE from '../../assets/svg/noun-escape-3814717.svg';
-import INITIATOR from '../../assets/svg/noun-lightning-1241238.svg';
-import DISABLER from '../../assets/svg/noun-disable-3883326.svg';
-import DURABLE from '../../assets/svg/noun-shield-5101162.svg';
-import JUNGLER from '../../assets/svg/noun-plant-257552.svg';
-import PUSHER from '../../assets/svg/noun-skill-sword-attack-2360258.svg';
 import { SkillIcon } from '../skill_icon/skill_icon.component';
+
+const CARRY = '/assets/svg/noun-sword-1432646.svg';
+const NUKE = '/assets/svg/noun-nuclear-5103661.svg';
+const SUPPORT = '/assets/svg/noun-hand-plus-4815869.svg';
+const ESCAPE = '/assets/svg/noun-escape-3814717.svg';
+const INITIATOR = '/assets/svg/noun-lightning-1241238.svg';
+const DISABLER = '/assets/svg/noun-disable-3883326.svg';
+const DURABLE = '/assets/svg/noun-shield-5101162.svg';
+const JUNGLER = '/assets/svg/noun-plant-257552.svg';
+const PUSHER = '/assets/svg/noun-skill-sword-attack-2360258.svg';
 
 export const Card = (props) => {
   const { heroes, imgUrl } = props;

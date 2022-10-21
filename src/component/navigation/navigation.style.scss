@@ -1,14 +1,15 @@
-$full-bleed: rgb(151, 3, 3);
+$full-bleed: rgba(56, 56, 56, 0.5);
 $MochiyFont: 'Mochiy Pop One', sans-serif;
 $navHeight: 50px;
 
 nav {
   font-family: $MochiyFont;
   background-color: $full-bleed;
-  // position: relative;
-  position: fixed;
+  position: relative;
+  // position: fixed;
   width: 100%;
   z-index: 20;
+  transition: all 300ms ease-in;
 
   .nav_bar {
     height: $navHeight;
@@ -36,7 +37,7 @@ nav {
     }
     ul.ul_menu {
       position: absolute;
-      background-color: $full-bleed;
+      background-color: rgba(56, 56, 56);
       top: $navHeight;
       right: 0;
       width: 100vw;
@@ -60,11 +61,16 @@ nav {
       -webkit-transition: all 300ms 300ms ease;
       -o-transition: all 300ms 300ms ease;
       transition: all 300ms 300ms ease;
+      padding-top: 2rem;
+      gap: 2rem;
+      z-index: 20;
 
       @media screen and (min-width: 900px) {
+        background-color: unset;
         position: unset;
         height: unset;
         top: 0;
+        padding-top: unset;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -101,7 +107,7 @@ nav {
         transition-duration: 200ms;
 
         &:is(:focus, :hover) {
-          color: $full-bleed;
+          color: rgba(56, 56, 56);
           background-color: #f2f2f2;
         }
 
@@ -111,4 +117,8 @@ nav {
       }
     }
   }
+}
+
+.scrollFixed {
+  position: fixed;
 }

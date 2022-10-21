@@ -5,18 +5,10 @@
 
   &::before {
     content: '';
-    background-color: rgba(43, 43, 43, 0.836);
+    background-color: rgba(43, 43, 43, 0.85);
     position: absolute;
     inset: 0;
     z-index: -1;
-  }
-}
-.container {
-  margin-inline: 10%;
-
-  @media screen and (min-width: 1700px) {
-    margin-inline: auto;
-    max-width: 1600px;
   }
 }
 

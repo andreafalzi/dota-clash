@@ -21,7 +21,7 @@ export const Builds = () => {
   }
 
   return (
-    <>
+    <div className='container'>
       <h1>Builds</h1>
       <Link to='new'>
         <Button>Create Build</Button>
@@ -67,6 +67,6 @@ export const Builds = () => {
         })}
       </div>
       <Outlet />
-    </>
+    </div>
   );
 };
